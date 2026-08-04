@@ -1,53 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Nursing by NHM</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body{
-      margin:0;
-      font-family:Arial,sans-serif;
-      background:#f5f3ff;
-      text-align:center;
-    }
-    header{
-      background:#6a1b9a;
-      color:white;
-      padding:20px;
-      font-size:28px;
-      font-weight:bold;
-    }
-    .tag{
-      color:#7b1fa2;
-      margin:15px;
-      font-size:18px;
-      font-weight:bold;
-    }
-    .card{
-      background:white;
-      margin:15px;
-      padding:20px;
-      border-radius:15px;
-      box-shadow:0 2px 8px rgba(0,0,0,.15);
-      font-size:22px;
-      font-weight:bold;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nursing by NHM</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f2ff;
+}
+
+.header{
+background:linear-gradient(135deg,#6A1B9A,#8E24AA);
+color:white;
+padding:35px 20px;
+text-align:center;
+border-bottom-left-radius:25px;
+border-bottom-right-radius:25px;
+box-shadow:0 4px 10px rgba(0,0,0,.2);
+}
+
+.header h1{
+font-size:30px;
+}
+
+.header p{
+margin-top:8px;
+font-size:16px;
+}
+
+.container{
+padding:20px;
+}
+
+a{
+text-decoration:none;
+color:black;
+}
+
+.card{
+background:white;
+padding:18px;
+margin-bottom:15px;
+border-radius:18px;
+box-shadow:0 3px 10px rgba(0,0,0,.12);
+font-size:20px;
+font-weight:bold;
+transition:.2s;
+}
+
+.card:active{
+transform:scale(.97);
+}
+
+.footer{
+text-align:center;
+padding:20px;
+font-size:14px;
+color:#666;
+}
+</style>
+
 </head>
+
 <body>
 
-<header>Nursing by NHM</header>
+<div class="header">
+<h1>🏥 Nursing by NHM</h1>
+<p>LEARN • CARE • SERVE</p>
+</div>
 
-<div class="tag">LEARN • CARE • SERVE</div>
+<div class="container">
 
-<div class="card" onclick="window.location.href='mcqs.html'" style="cursor:pointer;">📚 Daily MCQs</div>
-<a href="notes.html" style="text-decoration:none;color:black;">
+<a href="mcqs.html">
+<div class="card">📚 Daily MCQs</div>
+</a>
+
+<a href="notes.html">
 <div class="card">📝 Notes</div>
 </a>
-<div class="card">💎 NHM Pearls</div>
+
+<a href="#">
 <div class="card">📖 Subjects</div>
+</a>
+
+<a href="#">
+<div class="card">💎 NHM Pearls</div>
+</a>
+
+<a href="#">
 <div class="card">🎯 Mock Tests</div>
+</a>
+
+<a href="#">
+<div class="card">ℹ️ About</div>
+</a>
+
+</div>
+
+<div class="footer">
+Made with ❤️ by Nursing by NHM
+</div>
 
 </body>
 </html>
