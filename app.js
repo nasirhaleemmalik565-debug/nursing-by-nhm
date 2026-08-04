@@ -1,1 +1,3 @@
-console.log("Nursing by NHM Loaded");
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("Nursing by NHM Loaded Successfully");
+});
