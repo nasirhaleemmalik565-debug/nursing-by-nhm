@@ -24,6 +24,35 @@ a{
 .container{
     padding:18px;
 }
+/* HOME HEADER */
+
+.header{
+    background:linear-gradient(135deg,#6A1B9A,#8E24AA);
+    color:#fff;
+    text-align:center;
+    padding:40px 20px 30px;
+    border-bottom-left-radius:28px;
+    border-bottom-right-radius:28px;
+    box-shadow:0 4px 12px rgba(0,0,0,.18);
+}
+
+.header img{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    margin-bottom:12px;
+}
+
+.header h1{
+    font-size:34px;
+    font-weight:700;
+    margin-bottom:6px;
+}
+
+.header p{
+    font-size:16px;
+    opacity:.95;
+}
 
 /* ==========================
    APP BAR
