@@ -43,10 +43,12 @@ function toggleFav(btn){
 
     btn.classList.toggle("active");
 
+    const icon = btn.querySelector(".material-icons-outlined");
+
     if(btn.classList.contains("active")){
-        btn.style.color="#2E7D32";   // Green
+        icon.textContent = "favorite";
     }else{
-        btn.style.color="#888";      // Grey
+        icon.textContent = "favorite_border";
     }
 
 }
