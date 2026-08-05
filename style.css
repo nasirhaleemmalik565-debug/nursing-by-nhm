@@ -214,3 +214,11 @@ a{
     font-size:14px;
     padding:20px;
 }
+.footer{
+    width:100%;
+    text-align:center !important;
+    display:block;
+    margin:20px auto;
+    color:#666;
+    font-size:14px;
+}
