@@ -64,6 +64,12 @@ transition:.3s;
 background:#ececec;
 }
 
+.selected{
+background:#E9D5FF;
+border:2px solid #6A1B9A;
+color:#4A148C;
+font-weight:bold;
+}
 .correct{
 background:#d4edda;
 border-color:#28a745;
@@ -154,6 +160,7 @@ option.onclick=function(){
 options.forEach(function(o){
 
 o.style.background="#f3f3f3";
+o.classList.remove("selected");
 o.classList.remove("correct");
 o.classList.remove("wrong");
 
@@ -161,7 +168,7 @@ o.classList.remove("wrong");
 
 selected=this;
 
-this.style.background="#dddddd";
+this.classList.add("selected");
 
 };
 
