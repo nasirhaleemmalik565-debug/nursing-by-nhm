@@ -4,37 +4,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>NHM Pearls - Nursing by NHM</title>
-
+<title>NHM Pearls</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<header style="background:#6A1B9A;color:white;padding:18px;display:flex;align-items:center;">
-<a href="index.html" style="color:white;text-decoration:none;font-size:24px;">←</a>
-<h2 style="margin:0 auto;">NHM Pearls</h2>
-</header>
+<div class="header">
+
+    <div class="header-top">
+        <a href="index.html" class="back-btn">←</a>
+        <div class="header-title">NHM Pearls</div>
+    </div>
+
+</div>
 
 <div class="container">
 
-<!-- Search -->
+<a href="search.html">
+<div class="feature-card">
 
-<div class="feature-card" onclick="location.href='search.html'">
 <div class="feature-left">
 
 <div class="feature-icon">🔍</div>
 
 <div class="feature-content">
-
 <div class="feature-title">Search Pearls</div>
-
 <div class="feature-subtitle">
-Search all nursing pearls instantly
+Find any pearl instantly
 </div>
-
 </div>
 
 </div>
@@ -42,22 +40,20 @@ Search all nursing pearls instantly
 <div class="feature-arrow">›</div>
 
 </div>
+</a>
 
-<!-- Favorites -->
+<a href="favorites.html">
+<div class="feature-card">
 
-<div class="feature-card" onclick="location.href='favorites.html'">
 <div class="feature-left">
 
 <div class="feature-icon">⭐</div>
 
 <div class="feature-content">
-
 <div class="feature-title">My Favorites</div>
-
 <div class="feature-subtitle">
-View your saved pearls
+Your saved pearls
 </div>
-
 </div>
 
 </div>
@@ -65,36 +61,65 @@ View your saved pearls
 <div class="feature-arrow">›</div>
 
 </div>
+</a>
 
 <div class="section-title">
-CATEGORIES
+Categories
 </div>
 
 <a href="mostcommon.html">
-<div class="card">📂 Most Common <span>›</span></div>
+<div class="card">
+<div class="card-text">📂 Most Common</div>
+<div class="arrow">›</div>
+</div>
 </a>
 
-<div class="card">💊 Drug of Choice <span>›</span></div>
-
-<div class="card">📊 Normal Values <span>›</span></div>
-
-<div class="card">🏅 Gold Standards <span>›</span></div>
-
-<div class="card">🚨 First / Initial Action <span>›</span></div>
-
-<div class="card">🧠 Mnemonics <span>›</span></div>
-
-<div class="card">📌 Important Classifications <span>›</span></div>
-
-<div class="card">⭐ High-Yield Facts <span>›</span></div>
-
-<div class="card">🩺 Clinical Signs <span>›</span></div>
-
-<div class="card">🧪 Important Investigations <span>›</span></div>
-
+<div class="card">
+<div class="card-text">💊 Drug of Choice</div>
+<div class="arrow">›</div>
 </div>
 
-<script src="app.js"></script>
+<div class="card">
+<div class="card-text">📊 Normal Values</div>
+<div class="arrow">›</div>
+</div>
+
+<div class="card">
+<div class="card-text">🏅 Gold Standards</div>
+<div class="arrow">›</div>
+</div>
+
+<div class="card">
+<div class="card-text">🚨 First / Initial Action</div>
+<div class="arrow">›</div>
+</div>
+
+<div class="card">
+<div class="card-text">🧠 Mnemonics</div>
+<div class="arrow">›</div>
+</div>
+
+<div class="card">
+<div class="card-text">📌 Important Classifications</div>
+<div class="arrow">›</div>
+</div>
+
+<div class="card">
+<div class="card-text">⭐ High-Yield Facts</div>
+<div class="arrow">›</div>
+</div>
+
+<div class="card">
+<div class="card-text">🩺 Clinical Signs</div>
+<div class="arrow">›</div>
+</div>
+
+<div class="card">
+<div class="card-text">🧪 Important Investigations</div>
+<div class="arrow">›</div>
+</div>
+
+</div>
 
 </body>
 </html>
