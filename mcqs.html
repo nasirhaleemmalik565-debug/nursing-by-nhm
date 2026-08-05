@@ -31,10 +31,41 @@ font-weight:bold;
 margin-bottom:15px;
 }
 .option{
-padding:10px;
-margin:8px 0;
-background:#eee;
-border-radius:8px;
+padding:15px;
+margin:12px 0;
+background:#f5f5f5;
+border-radius:12px;
+border:2px solid transparent;
+cursor:pointer;
+transition:0.3s;
+}
+.option:hover{
+background:#ececec;
+}
+
+.correct{
+background:#d4edda;
+border-color:#28a745;
+color:#155724;
+font-weight:bold;
+}
+
+.wrong{
+background:#f8d7da;
+border-color:#dc3545;
+color:#721c24;
+font-weight:bold;
+}
+
+button{
+width:100%;
+padding:15px;
+margin-top:20px;
+background:#6A1B9A;
+color:white;
+font-size:18px;
+border:none;
+border-radius:12px;
 }
 </style>
 </head>
@@ -57,12 +88,51 @@ Daily MCQs
 Which vitamin deficiency causes Night Blindness?
 </div>
 
-<div class="option">A. Vitamin A</div>
-<div class="option">B. Vitamin C</div>
-<div class="option">C. Vitamin D</div>
-<div class="option">D. Vitamin K</div>
+<div class="option" data-correct="true">A. Vitamin A</div>
 
+<div class="option">B. Vitamin C</div>
+
+<div class="option">C. Vitamin D</div>
+
+<div class="option">D. Vitamin K</div>
 </div>
+<button onclick="checkAnswer()">Submit Answer</button>
+
+<p id="result" style="text-align:center;font-size:18px;font-weight:bold;margin-top:20px;"></p>
+
+<script>
+
+function checkAnswer(){
+
+let options=document.getElementsByClassName("option");
+
+options[0].classList.add("correct");
+
+for(let i=1;i<options.length;i++){
+
+if(options[i].style.background=="rgb(221, 221, 221)"){
+options[i].classList.add("wrong");
+}
+
+}
+
+}
+
+for(let option of document.getElementsByClassName("option")){
+
+option.onclick=function(){
+
+for(let o of document.getElementsByClassName("option")){
+o.style.background="#f5f5f5";
+}
+
+this.style.background="#ddd";
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
