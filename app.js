@@ -34,3 +34,19 @@ document.querySelectorAll(".fav-btn").forEach(btn => {
     });
 
 });
+
+// ==========================
+// FAVORITES SYSTEM
+// ==========================
+
+function toggleFav(btn){
+
+    btn.classList.toggle("active");
+
+    if(btn.classList.contains("active")){
+        btn.style.color="#2E7D32";
+    }else{
+        btn.style.color="#888";
+    }
+
+}
