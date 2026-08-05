@@ -1,44 +1,65 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Daily MCQs</title>
+
 <style>
+
 body{
 font-family:Arial,sans-serif;
 background:#f5f3ff;
 margin:0;
 }
+
 header{
-background:#6a1b9a;
+background:#6A1B9A;
 color:white;
-padding:20px;
-text-align:center;
-font-size:28px;
-font-weight:bold;
+padding:18px;
+display:flex;
+align-items:center;
 }
+
+header a{
+color:white;
+text-decoration:none;
+font-size:24px;
+}
+
+header h2{
+margin:0 auto;
+}
+
 .card{
 background:white;
 margin:20px;
 padding:20px;
-border-radius:15px;
-box-shadow:0 2px 8px rgba(0,0,0,.15);
+border-radius:18px;
+box-shadow:0 2px 10px rgba(0,0,0,.12);
 }
+
 .question{
-font-size:20px;
+font-size:22px;
 font-weight:bold;
-margin-bottom:15px;
+margin-bottom:20px;
+line-height:1.5;
 }
+
 .option{
 padding:15px;
 margin:12px 0;
-background:#f5f5f5;
+background:#f3f3f3;
 border-radius:12px;
 border:2px solid transparent;
 cursor:pointer;
-transition:0.3s;
+transition:.3s;
 }
+
 .option:hover{
 background:#ececec;
 }
@@ -63,57 +84,84 @@ padding:15px;
 margin-top:20px;
 background:#6A1B9A;
 color:white;
-font-size:18px;
 border:none;
 border-radius:12px;
+font-size:18px;
 }
+
+#result{
+margin-top:20px;
+font-size:18px;
+font-weight:bold;
+text-align:center;
+}
+
 </style>
+
 </head>
+
 <body>
 
-<header style="background:#6A1B9A;color:white;padding:18px;display:flex;align-items:center;">
+<header>
 
-<a href="index.html" style="color:white;text-decoration:none;font-size:22px;">
-⬅
-</a>
+<a href="index.html">←</a>
 
-<h2 style="margin:0 auto;font-size:24px;">
-Daily MCQs
-</h2>
+<h2>Daily MCQs</h2>
 
 </header>
 
 <div class="card">
+
 <div class="question">
+
 Which vitamin deficiency causes Night Blindness?
+
 </div>
 
-<div class="option" data-correct="true">A. Vitamin A</div>
-
-<div class="option">B. Vitamin C</div>
-
-<div class="option">C. Vitamin D</div>
-
-<div class="option">D. Vitamin K</div>
+<div class="option" data-correct="true">
+A. Vitamin A
 </div>
-<button onclick="checkAnswer()">Submit Answer</button>
 
-<p id="result" style="text-align:center;font-size:18px;font-weight:bold;margin-top:20px;"></p>
+<div class="option">
+B. Vitamin C
+</div>
 
-let selected = null;
+<div class="option">
+C. Vitamin D
+</div>
 
-document.querySelectorAll(".option").forEach(option => {
+<div class="option">
+D. Vitamin K
+</div>
 
-option.onclick = function () {
+<button onclick="checkAnswer()">
 
-document.querySelectorAll(".option").forEach(o => {
-o.style.background="#f5f5f5";
-o.classList.remove("correct","wrong");
+Submit Answer
+
+</button>
+
+<p id="result"></p>
+<script>
+
+let selected=null;
+
+let options=document.querySelectorAll(".option");
+
+options.forEach(function(option){
+
+option.onclick=function(){
+
+options.forEach(function(o){
+
+o.style.background="#f3f3f3";
+o.classList.remove("correct");
+o.classList.remove("wrong");
+
 });
 
 selected=this;
 
-this.style.background="#ddd";
+this.style.background="#dddddd";
 
 };
 
@@ -133,41 +181,19 @@ if(selected.dataset.correct=="true"){
 
 selected.classList.add("correct");
 
+document.getElementById("result").innerHTML="✅ Correct!";
+
+document.getElementById("result").style.color="green";
+
 }else{
 
 selected.classList.add("wrong");
 
 document.querySelector("[data-correct='true']").classList.add("correct");
 
-}
+document.getElementById("result").innerHTML="❌ Incorrect!";
 
-}
-
-function checkAnswer(){
-
-let options=document.getElementsByClassName("option");
-
-options[0].classList.add("correct");
-
-for(let i=1;i<options.length;i++){
-
-if(options[i].style.background=="rgb(221, 221, 221)"){
-options[i].classList.add("wrong");
-}
-
-}
-
-}
-
-for(let option of document.getElementsByClassName("option")){
-
-option.onclick=function(){
-
-for(let o of document.getElementsByClassName("option")){
-o.style.background="#f5f5f5";
-}
-
-this.style.background="#ddd";
+document.getElementById("result").style.color="red";
 
 }
 
@@ -175,6 +201,8 @@ this.style.background="#ddd";
 
 </script>
 
+</div>
+
 </body>
+
 </html>
-       
