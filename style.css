@@ -106,3 +106,75 @@ a{
     font-size:24px;
     color:#AAA;
 }
+/* ==========================
+   SECTION TITLE
+========================== */
+
+.section-title{
+    margin:28px 4px 16px;
+    color:#777;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+/* ==========================
+   CATEGORY CARDS
+========================== */
+
+.card{
+    background:#fff;
+    border-radius:20px;
+    padding:18px;
+    margin-bottom:14px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    transition:.18s;
+}
+
+.card:active{
+    transform:scale(.98);
+}
+
+.card-left{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.card-icon{
+    font-size:24px;
+}
+
+.card-title{
+    font-size:18px;
+    font-weight:700;
+}
+
+.card-arrow{
+    font-size:22px;
+    color:#AAA;
+}
+
+/* ==========================
+   SMALL UTILITIES
+========================== */
+
+.mt-20{
+    margin-top:20px;
+}
+
+.hidden{
+    display:none;
+}
+
+.text-center{
+    text-align:center;
+}
+
+.footer-space{
+    height:24px;
+}
