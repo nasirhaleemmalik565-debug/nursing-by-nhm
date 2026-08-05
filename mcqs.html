@@ -100,7 +100,48 @@ Which vitamin deficiency causes Night Blindness?
 
 <p id="result" style="text-align:center;font-size:18px;font-weight:bold;margin-top:20px;"></p>
 
-<script>
+let selected = null;
+
+document.querySelectorAll(".option").forEach(option => {
+
+option.onclick = function () {
+
+document.querySelectorAll(".option").forEach(o => {
+o.style.background="#f5f5f5";
+o.classList.remove("correct","wrong");
+});
+
+selected=this;
+
+this.style.background="#ddd";
+
+};
+
+});
+
+function checkAnswer(){
+
+if(selected==null){
+
+alert("Please select an answer.");
+
+return;
+
+}
+
+if(selected.dataset.correct=="true"){
+
+selected.classList.add("correct");
+
+}else{
+
+selected.classList.add("wrong");
+
+document.querySelector("[data-correct='true']").classList.add("correct");
+
+}
+
+}
 
 function checkAnswer(){
 
