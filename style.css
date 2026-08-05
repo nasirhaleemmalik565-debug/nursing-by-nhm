@@ -126,3 +126,10 @@ font-size:14px;
     font-weight:bold;
     letter-spacing:2px;
 }
+/* Disable text selection everywhere */
+*{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
