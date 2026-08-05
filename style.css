@@ -396,3 +396,17 @@ line-height:1.3;
     font-size:22px;
     cursor:pointer;
 }
+
+.fav-btn{
+    border:none;
+    background:none;
+    font-size:22px;
+    color:#888;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.fav-btn.active{
+    color:#2E7D32;
+    transform:scale(1.1);
+}
