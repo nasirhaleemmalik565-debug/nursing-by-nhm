@@ -181,7 +181,7 @@ this.classList.add("selected");
 
 function checkAnswer(){
 
-if(selected==null){
+if(selected==null){ let currentQuestion = 1;
 
 alert("Please select an answer.");
 
@@ -210,7 +210,11 @@ document.getElementById("result").style.color="red";
 }
 document.getElementById("nextBtn").style.display="block";
 }
+document.getElementById("nextBtn").onclick = function(){
 
+alert("Question 2 will load here.");
+
+};
 </script>
 
 </div>
