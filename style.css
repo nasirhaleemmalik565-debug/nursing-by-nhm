@@ -135,6 +135,7 @@ font-size:14px;
 }
 
 .feature-card{
+border:3px solid red;
 background:#fff;
 border-radius:20px;
 padding:18px;
