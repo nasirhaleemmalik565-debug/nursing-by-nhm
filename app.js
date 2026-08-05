@@ -44,9 +44,9 @@ function toggleFav(btn){
     btn.classList.toggle("active");
 
     if(btn.classList.contains("active")){
-        btn.style.color="#2E7D32";
+        btn.style.color="#2E7D32";   // Green
     }else{
-        btn.style.color="#888";
+        btn.style.color="#888";      // Grey
     }
 
 }
