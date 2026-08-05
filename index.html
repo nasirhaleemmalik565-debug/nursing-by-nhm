@@ -7,6 +7,7 @@
 <title>Nursing by NHM</title>
 
 <link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
 </head>
 
 <body>
@@ -45,5 +46,10 @@ Made with ❤️ by Nursing by NHM
 </div>
 
 <script src="app.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
 </body>
 </html>
