@@ -82,3 +82,47 @@ padding:20px;
 color:#777;
 font-size:14px;
 }
+.category-card{
+    background:#fff;
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:16px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 3px 10px rgba(0,0,0,.12);
+    cursor:pointer;
+    transition:.2s;
+}
+
+.category-card:active{
+    transform:scale(.97);
+}
+
+.category-left{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.category-icon{
+    font-size:24px;
+}
+
+.category-title{
+    font-size:20px;
+    font-weight:700;
+}
+
+.arrow{
+    font-size:24px;
+    color:#999;
+}
+
+.section-title{
+    margin:32px 6px 16px;
+    color:#777;
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
