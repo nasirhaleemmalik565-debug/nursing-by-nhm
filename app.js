@@ -14,3 +14,23 @@ card.style.transform="scale(1)";
 });
 
 });
+
+// ==========================
+// FAVORITES
+// ==========================
+
+document.querySelectorAll(".fav-btn").forEach(btn => {
+
+    btn.addEventListener("click", function(){
+
+        this.classList.toggle("active");
+
+        if(this.classList.contains("active")){
+            this.innerHTML = "❤️";
+        }else{
+            this.innerHTML = "♡";
+        }
+
+    });
+
+});
