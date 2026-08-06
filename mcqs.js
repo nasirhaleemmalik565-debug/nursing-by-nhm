@@ -62,6 +62,20 @@ correct:1
 
 ];
 
+function shuffle(array){
+
+for(let i=array.length-1;i>0;i--){
+
+let j=Math.floor(Math.random()*(i+1));
+
+[array[i],array[j]]=[array[j],array[i]];
+
+}
+
+return array;
+
+}
+
 let current = 0;
 let score = 0;
 let selected = -1;
@@ -81,14 +95,26 @@ nextBtn.style.display = "none";
 
 question.innerHTML = questions[current].question;
 
+let shuffledOptions =
+questions[current].options.map(function(text,index){
+
+return{
+text:text,
+correct:index===questions[current].correct
+};
+
+});
+
+shuffle(shuffledOptions);
+
 options.forEach(function(option,index){
 
 option.innerHTML =
-String.fromCharCode(65+index)+". "+questions[current].options[index];
+String.fromCharCode(65+index)+". "+shuffledOptions[index].text;
 
-option.className = "option";
+option.className="option";
 
-option.onclick = function(){
+option.onclick=function(){
 
 options.forEach(function(o){
 
@@ -96,15 +122,19 @@ o.classList.remove("selected");
 
 });
 
-selected = index;
+selected=index;
 
 option.classList.add("selected");
 
 };
 
+option.dataset.correct=shuffledOptions[index].correct;
+
 });
 
 }
+
+shuffle(questions);
 
 loadQuestion();
 
