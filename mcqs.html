@@ -45,8 +45,11 @@ margin:16px;
 padding:18px;
 border-radius:20px;
 box-shadow:0 3px 12px rgba(0,0,0,.12);
-}
 
+display:flex;
+flex-direction:column;
+height:calc(100vh - 120px);
+}
 .progress{
 width:100%;
 height:9px;
@@ -144,6 +147,21 @@ margin:0;
 z-index:1;
 }
 
+.quiz-content{
+flex:1;
+overflow-y:auto;
+}
+
+.button-area{
+background:white;
+padding-top:10px;
+}
+
+.button-area button{
+width:100%;
+margin-top:10px;
+}
+
 </style>
 
 </head>
@@ -160,6 +178,7 @@ z-index:1;
 </header>
 
 <div class="card">
+<div class="quiz-content">
 
 <div id="progressText"></div>
 
@@ -183,9 +202,19 @@ Submit Answer
 
 <p id="result"></p>
 
+</div>
+
+<div class="button-area">
+
+<button onclick="checkAnswer()">
+Submit Answer
+</button>
+
 <button id="nextBtn" style="display:none;">
 Next Question →
 </button>
+
+</div>
 
 <script src="questions.js"></script>
 <script src="mcqs.js"></script>
