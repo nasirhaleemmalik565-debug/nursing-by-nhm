@@ -271,8 +271,9 @@ correct:1
 ];
 
 let current=0;
-
 let selected=null;
+let score=0;
+let answered=false;
 
 const question=document.getElementById("question");
 
@@ -283,6 +284,8 @@ const result=document.getElementById("result");
 const nextBtn=document.getElementById("nextBtn");
 
 function loadQuestion(){
+
+answered=false;
 
 selected=null;
 
@@ -333,10 +336,15 @@ function checkAnswer(){
 if(selected==null){
 
 alert("Please select an answer.");
-
 return;
 
 }
+
+if(answered){
+return;
+}
+
+answered=true;
 
 if(selected.dataset.correct=="true"){
 
@@ -345,6 +353,8 @@ selected.classList.add("correct");
 result.innerHTML="✅ Correct!";
 
 result.style.color="green";
+
+score++;
 
 }
 
@@ -376,9 +386,25 @@ loadQuestion();
 
 else{
 
-alert("🎉 You have completed all 10 MCQs.");
+document.querySelector(".card").innerHTML=`
 
-location.href="index.html";
+<h2 style="text-align:center;color:#6A1B9A;">
+🎉 Quiz Completed
+</h2>
+
+<p style="text-align:center;font-size:22px;font-weight:bold;">
+Your Score
+</p>
+
+<h1 style="text-align:center;color:#6A1B9A;">
+${score} / ${questions.length}
+</h1>
+
+<button onclick="location.reload()">
+Restart Quiz
+</button>
+
+`;
 
 }
 
