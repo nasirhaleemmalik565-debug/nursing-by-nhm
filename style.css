@@ -315,6 +315,10 @@ line-height:1.3;
 
 .pearl-question{
     flex:1;
+    font-size:17px;
+    font-weight:700;
+    color:#222;
+    line-height:1.5;
 }
 
 .pearl-fullform{
@@ -340,11 +344,11 @@ line-height:1.3;
 }
 
 .fav-btn{
+    flex-shrink:0;
     border:none;
     background:none;
-    font-size:24px;
     cursor:pointer;
-    color:#999;
+    padding:0;
 }
 
 .fav-btn:active{
@@ -353,4 +357,170 @@ line-height:1.3;
 
 .fav-btn.active{
     color:#E53935;
+}
+/* =========================
+   HOME GRID
+========================= */
+
+.grid-menu{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:20px;
+}
+
+.grid-card{
+    background:#fff;
+    border-radius:20px;
+    padding:22px 12px;
+    min-height:135px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    transition:.2s;
+}
+
+.grid-card:active{
+    transform:scale(.97);
+}
+
+.grid-icon{
+    font-size:40px;
+    margin-bottom:12px;
+}
+
+.grid-title{
+    font-size:15px;
+    font-weight:700;
+    line-height:1.35;
+}
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
+.feature-card{
+    background:#fff;
+    border-radius:20px;
+    padding:18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:16px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.feature-left{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.feature-icon{
+    font-size:28px;
+}
+
+.feature-title{
+    font-size:18px;
+    font-weight:700;
+}
+
+.feature-subtitle{
+    margin-top:4px;
+    font-size:13px;
+    color:#777;
+}
+
+.feature-arrow{
+    font-size:24px;
+    color:#999;
+}
+
+/* =========================
+   CATEGORY CARDS
+========================= */
+
+.card{
+    background:#fff;
+    border-radius:18px;
+    padding:18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:14px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.card-left{
+    flex:1;
+}
+
+.card-title{
+    font-size:17px;
+    font-weight:700;
+}
+
+.card-arrow{
+    font-size:22px;
+    color:#AAA;
+}
+
+/* =========================
+   NHM PEARLS
+========================= */
+
+.pearl-card{
+    background:#fff;
+    border-radius:20px;
+    padding:18px;
+    margin-bottom:16px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    transition:.2s;
+}
+
+.pearl-card:active{
+    transform:scale(.98);
+}
+
+.pearl-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:14px;
+}
+
+.pearl-question{
+    flex:1;
+    font-size:17px;
+    font-weight:700;
+    line-height:1.5;
+    color:#222;
+}
+
+.pearl-answer{
+    margin-top:10px;
+    font-size:15px;
+    color:#666;
+    line-height:1.5;
+}
+
+.fav-btn{
+    border:none;
+    background:none;
+    cursor:pointer;
+    padding:2px;
+    flex-shrink:0;
+}
+
+.fav-btn .material-icons-outlined{
+    font-size:24px;
+    color:#BDBDBD;
+    transition:.2s;
+}
+
+.fav-btn.active .material-icons-outlined{
+    color:#2E7D32;
 }
