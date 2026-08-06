@@ -1,4 +1,4 @@
-alert("MCQS Loaded");
+console.log(questionBank);
 
 // Daily Quiz Settings
 
