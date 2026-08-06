@@ -149,19 +149,15 @@ progressFill.style.width=
 
 question.innerHTML=questions[current].question;
 
-let currentOptions=[...questions[current].options];
-
-shuffle(currentOptions);
 
 options.forEach(function(option,index){
 
 option.className="option";
 
 option.innerHTML=
-String.fromCharCode(65+index)+". "+currentOptions[index].text;
+String.fromCharCode(65+index)+". "+questions[current].options[index].text;
 
-option.dataset.correct=currentOptions[index].correct;
-
+option.dataset.correct=questions[current].options[index].correct;
 option.onclick=function(){
 
 options.forEach(function(o){
