@@ -1,14 +1,3 @@
-
-question:"Which chamber of the heart has the thickest wall?",
-options:[
-{text:"Right Atrium",correct:false},
-{text:"Left Atrium",correct:false},
-{text:"Right Ventricle",correct:false},
-{text:"Left Ventricle",correct:true}
-]
-},
-
-
 // Daily Quiz Settings
 
 const QUESTIONS_PER_DAY = 10;
