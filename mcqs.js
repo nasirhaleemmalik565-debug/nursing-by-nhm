@@ -1,6 +1,4 @@
-alert("1");
-alert(questionBank.length);
-alert("2");
+
 
 // Daily Quiz Settings
 
