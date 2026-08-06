@@ -23,14 +23,14 @@ background:#F5F3FF;
 
 header{
 background:#6A1B9A;
-color:#fff;
+color:white;
 padding:18px;
 display:flex;
 align-items:center;
 }
 
 header a{
-color:#fff;
+color:white;
 text-decoration:none;
 font-size:24px;
 }
@@ -38,10 +38,11 @@ font-size:24px;
 header h2{
 margin:0 auto;
 margin-right:24px;
+font-size:24px;
 }
 
 .card{
-background:#fff;
+background:white;
 margin:20px;
 padding:20px;
 border-radius:20px;
@@ -50,7 +51,7 @@ box-shadow:0 3px 12px rgba(0,0,0,.12);
 
 .question{
 font-size:22px;
-font-weight:700;
+font-weight:bold;
 line-height:1.5;
 margin-bottom:20px;
 }
@@ -125,25 +126,15 @@ font-weight:bold;
 
 <div class="card">
 
-<div class="question" id="question">
-Which vitamin deficiency causes Night Blindness?
-</div>
+<div class="question" id="question"></div>
 
-<div class="option" data-correct="true">
-A. Vitamin A
-</div>
+<div class="option"></div>
 
-<div class="option">
-B. Vitamin C
-</div>
+<div class="option"></div>
 
-<div class="option">
-C. Vitamin D
-</div>
+<div class="option"></div>
 
-<div class="option">
-D. Vitamin K
-</div>
+<div class="option"></div>
 
 <button onclick="checkAnswer()">
 Submit Answer
@@ -213,6 +204,7 @@ options:[
 ],
 correct:2
 },
+
 {
 question:"Drug of choice for Anaphylaxis is:",
 options:[
@@ -271,25 +263,22 @@ correct:1
 ];
 
 let current=0;
-let selected=null;
 let score=0;
 let answered=false;
+let selected=null;
 
 const question=document.getElementById("question");
-
 const options=document.querySelectorAll(".option");
-
 const result=document.getElementById("result");
-
 const nextBtn=document.getElementById("nextBtn");
 
 function loadQuestion(){
 
 answered=false;
-
 selected=null;
 
 result.innerHTML="";
+result.style.color="black";
 
 nextBtn.style.display="none";
 
@@ -299,11 +288,13 @@ options.forEach(function(option,index){
 
 option.innerHTML=questions[current].options[index];
 
-option.classList.remove("selected","correct","wrong");
+option.classList.remove("selected");
+option.classList.remove("correct");
+option.classList.remove("wrong");
 
 option.removeAttribute("data-correct");
 
-if(index==questions[current].correct){
+if(index===questions[current].correct){
 
 option.dataset.correct="true";
 
@@ -312,7 +303,6 @@ option.dataset.correct="true";
 });
 
 }
-
 
 options.forEach(function(option){
 
@@ -336,7 +326,7 @@ this.classList.add("selected");
 
 function checkAnswer(){
 
-if(selected==null){
+if(selected===null){
 
 alert("Please select an answer.");
 return;
@@ -349,7 +339,7 @@ return;
 
 answered=true;
 
-if(selected.dataset.correct=="true"){
+if(selected.dataset.correct==="true"){
 
 selected.classList.add("correct");
 
@@ -360,7 +350,6 @@ result.style.color="green";
 score++;
 
 }
-
 else{
 
 selected.classList.add("wrong");
@@ -386,37 +375,36 @@ if(current<questions.length){
 loadQuestion();
 
 }
-
 else{
-
-showResult();
-
-}
-
-};
-
-function showResult(){
 
 let percentage=Math.round((score/questions.length)*100);
 
 let message="";
 
 if(percentage>=80){
+
 message="🌟 Excellent!";
+
 }
 else if(percentage>=60){
+
 message="👏 Good Job!";
+
 }
 else if(percentage>=40){
+
 message="📚 Keep Practicing!";
+
 }
 else{
+
 message="💪 Revise & Try Again!";
+
 }
 
 document.querySelector(".card").innerHTML=`
 
-<div style="text-align:center;padding:10px;">
+<div style="text-align:center;padding:15px;">
 
 <div style="font-size:60px;">🎉</div>
 
@@ -444,8 +432,7 @@ ${message}
 🔄 Restart Quiz
 </button>
 
-<button onclick="location.href='index.html'"
-style="background:#555;">
+<button onclick="location.href='index.html'" style="background:#555;">
 🏠 Back to Home
 </button>
 
