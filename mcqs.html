@@ -148,23 +148,6 @@ margin:0;
 z-index:1;
 }
 
-.quiz-content{
-flex:1;
-overflow-y:auto;
-display:flex;
-flex-direction:column;
-}
-
-.button-area{
-background:white;
-padding-top:10px;
-}
-
-.button-area button{
-width:100%;
-margin-top:10px;
-}
-
 </style>
 
 </head>
@@ -181,7 +164,6 @@ margin-top:10px;
 </header>
 
 <div class="card">
-<div class="quiz-content">
 
 <div id="progressText"></div>
 
@@ -204,10 +186,6 @@ Submit Answer
 </button>
 
 <p id="result"></p>
-
-</div>
-
-<div class="button-area">
 
 <button onclick="checkAnswer()">
 Submit Answer
