@@ -1,6 +1,5 @@
 const searchData = [
 
-
 {
 title:"Most common congenital heart disease",
 page:"mostcommon.html"
