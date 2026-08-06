@@ -3,8 +3,28 @@
 const QUESTIONS_PER_DAY = 10;
 
 // Quiz Day
+const today = new Date().toDateString();
+
 let quizDay = Number(localStorage.getItem("quizDay")) || 1;
 
+let lastCompletedDate =
+localStorage.getItem("lastCompletedDate");
+
+if(lastCompletedDate && lastCompletedDate !== today){
+
+quizDay++;
+
+if(quizDay > Math.ceil(questionBank.length / QUESTIONS_PER_DAY)){
+
+quizDay = 1;
+
+}
+
+localStorage.setItem("quizDay",quizDay);
+
+localStorage.removeItem("lastCompletedDate");
+
+}
 // Starting Question
 let startIndex = (quizDay - 1) * QUESTIONS_PER_DAY;
 
@@ -184,20 +204,7 @@ loadQuestion();
 
 }
 else{
-if(quizDay < Math.ceil(questionBank.length / QUESTIONS_PER_DAY)){
-
-quizDay++;
-
-localStorage.setItem("quizDay",quizDay);
-
-}
-else{
-
-quizDay = 1;
-
-localStorage.setItem("quizDay",1);
-
-}
+localStorage.setItem("lastCompletedDate",today);
 let percentage=Math.round((score/questions.length)*100);
 
 let message="";
