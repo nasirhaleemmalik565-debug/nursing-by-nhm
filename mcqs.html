@@ -4,179 +4,340 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<title>Daily MCQs | Nursing by NHM</title>
+<title>
+Daily MCQs | Nursing by NHM
+</title>
 
 <style>
 
 *{
+
 margin:0;
+
 padding:0;
+
 box-sizing:border-box;
+
 font-family:Arial,sans-serif;
+
 }
 
 body{
+
 background:#F5F3FF;
+
 }
 
 header{
+
 background:#6A1B9A;
+
 color:white;
+
 padding:14px;
+
 display:flex;
+
 align-items:center;
+
 }
 
 header a{
+
 color:white;
+
 text-decoration:none;
+
 font-size:24px;
+
 }
 
 header h2{
+
 font-size:20px;
+
+margin:auto;
+
 }
 
 .card{
+
 background:white;
+
 margin:16px;
+
 padding:18px;
+
 border-radius:20px;
+
 box-shadow:0 3px 12px rgba(0,0,0,.12);
 
 display:flex;
+
 flex-direction:column;
-height:calc(100vh - 120px);
+
+min-height:calc(100vh - 120px);
+
 }
+
 .progress{
+
 width:100%;
+
 height:9px;
+
 background:#ddd;
+
 border-radius:10px;
+
 overflow:hidden;
+
 margin-bottom:12px;
+
 }
 
 #progressFill{
+
 height:100%;
-width:0%;
+
+width:0;
+
 background:#6A1B9A;
+
 transition:.4s;
+
 }
 
 #progressText{
+
+font-size:20px;
+
 font-weight:bold;
+
 color:#6A1B9A;
+
 margin-bottom:8px;
-font-size:22px;
+
 }
 
 #timer{
+
+text-align:right;
+
+font-weight:bold;
+
+color:#D32F2F;
+
 margin-bottom:10px;
+
 }
 
 #quizDay{
-padding:9px;
+
+background:#EDE7F6;
+
+padding:10px;
+
+border-radius:10px;
+
+text-align:center;
+
+font-weight:bold;
+
+color:#6A1B9A;
+
 margin-bottom:16px;
+
 }
 
 .question{
+
 font-size:20px;
+
 font-weight:bold;
-line-height:1.35;
+
+line-height:1.4;
+
 margin-bottom:14px;
+
 }
 
 .option{
-padding:14px;
-margin:10px 0;
+
+padding:12px 14px;
+
+margin:8px 0;
+
+background:#F7F7F7;
+
+border:2px solid #E0E0E0;
+
+border-radius:12px;
+
+cursor:pointer;
+
+transition:.25s;
+
+font-size:17px;
+
+line-height:1.4;
+
 }
 
 .option:hover{
-background:#ECECEC;
+
+background:#EEEEEE;
+
 }
 
 .selected{
+
 background:#E9D5FF;
+
 border-color:#6A1B9A;
+
 color:#4A148C;
+
 font-weight:bold;
+
 }
 
 .correct{
+
 background:#D4EDDA;
+
 border-color:#28A745;
+
 color:#155724;
+
 font-weight:bold;
+
 }
 
 .wrong{
+
 background:#F8D7DA;
+
 border-color:#DC3545;
+
 color:#721C24;
+
 font-weight:bold;
+
 }
 
 button{
-padding:14px;
-margin-top:16px;
-font-size:18px;
+
+width:100%;
+
+padding:13px;
+
+margin-top:14px;
+
+background:#6A1B9A;
+
+color:white;
+
+border:none;
+
+border-radius:12px;
+
+font-size:17px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+button:hover{
+
+opacity:.92;
+
 }
 
 #result{
-margin-top:18px;
+
+margin-top:16px;
+
 text-align:center;
+
 font-size:18px;
+
 font-weight:bold;
+
 }
 
 .mcq-header{
+
 position:relative;
+
 }
 
 .mcq-header h2{
+
 position:absolute;
+
 left:50%;
+
 transform:translateX(-50%);
+
 margin:0;
+
 }
 
 .mcq-header a{
-z-index:1;
+
+z-index:2;
+
 }
 
 .popup{
+
 position:fixed;
+
 top:0;
+
 left:0;
+
 width:100%;
+
 height:100%;
+
 background:rgba(0,0,0,.45);
 
 display:none;
 
 justify-content:center;
+
 align-items:center;
 
 z-index:999;
+
 }
 
 .popup-box{
 
 background:white;
 
-width:90%;
-max-width:360px;
+width:88%;
 
-padding:25px;
+max-width:340px;
 
-border-radius:18px;
+padding:22px;
+
+border-radius:20px;
 
 text-align:center;
 
-box-shadow:0 5px 20px rgba(0,0,0,.2);
+box-shadow:0 8px 25px rgba(0,0,0,.25);
+
+animation:popup .25s ease;
 
 }
 
@@ -184,7 +345,9 @@ box-shadow:0 5px 20px rgba(0,0,0,.2);
 
 color:#6A1B9A;
 
-margin-bottom:15px;
+margin-bottom:14px;
+
+font-size:22px;
 
 }
 
@@ -192,7 +355,37 @@ margin-bottom:15px;
 
 line-height:1.5;
 
-margin-bottom:18px;
+font-size:16px;
+
+margin-bottom:16px;
+
+color:#555;
+
+}
+
+.popup-box button{
+
+margin-top:10px;
+
+}
+
+@keyframes popup{
+
+from{
+
+transform:scale(.9);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
 
 }
 
@@ -201,7 +394,6 @@ margin-bottom:18px;
 </head>
 
 <body>
-
 
 <header class="mcq-header">
 
@@ -216,7 +408,9 @@ margin-bottom:18px;
 <div id="progressText"></div>
 
 <div class="progress">
+
 <div id="progressFill"></div>
+
 </div>
 
 <div id="timer"></div>
@@ -224,46 +418,65 @@ margin-bottom:18px;
 <div id="quizDay"></div>
 
 <div class="question" id="question"></div>
+
 <div class="option"></div>
+
 <div class="option"></div>
+
 <div class="option"></div>
+
 <div class="option"></div>
 
 <button onclick="checkAnswer()">
+
 Submit Answer
+
 </button>
 
 <p id="result"></p>
 
 <button id="nextBtn" style="display:none;">
+
 Next Question →
+
 </button>
 
 </div>
 
 <script src="questions.js"></script>
+
 <script src="mcqs.js"></script>
+
 <div id="attemptPopup" class="popup">
 
 <div class="popup-box">
 
-<h2>✅ Quiz Already Attempted</h2>
+<div style="font-size:60px;">
+📝
+</div>
+
+<h2>🎉 You've Already Completed Today's Quiz</h2>
 
 <p>
-You have already attempted today's Daily MCQ quiz.
+You've already completed today's Daily MCQ.
 </p>
 
-<p style="margin-top:10px;">
+<p>
 Would you like to attempt it again?
 </p>
 
 <button onclick="startAgain()">
+
 🔁 Attempt Again
+
 </button>
 
-<button onclick="location.href='index.html'"
+<button
+onclick="location.href='index.html'"
 style="background:#666;">
-← Back to Home
+
+🏠 Back to Home
+
 </button>
 
 </div>
@@ -271,4 +484,5 @@ style="background:#666;">
 </div>
 
 </body>
+
 </html>
