@@ -58,7 +58,6 @@ return array;
 
 }
 
-shuffle(questions);
 
 function loadQuestion(){
 
