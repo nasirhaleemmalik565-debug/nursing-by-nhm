@@ -83,6 +83,12 @@ const question = document.getElementById("question");
 const options = document.querySelectorAll(".option");
 const result = document.getElementById("result");
 const nextBtn = document.getElementById("nextBtn");
+const progressText=document.getElementById("progressText");
+const progressFill=document.getElementById("progressFill");
+const timer=document.getElementById("timer");
+
+let timeLeft=30;
+let interval;
 
 function loadQuestion(){
 
@@ -92,6 +98,34 @@ result.innerHTML = "";
 result.style.color = "black";
 
 nextBtn.style.display = "none";
+
+progressText.innerHTML =
+"Question "+(current+1)+" / "+questions.length;
+
+progressFill.style.width =
+((current+1)/questions.length)*100+"%";
+
+timeLeft = 30;
+
+timer.innerHTML = "⏱️ "+timeLeft+" sec";
+
+clearInterval(interval);
+
+interval = setInterval(function(){
+
+timeLeft--;
+
+timer.innerHTML = "⏱️ "+timeLeft+" sec";
+
+if(timeLeft<=0){
+
+clearInterval(interval);
+
+nextBtn.click();
+
+}
+
+},1000);
 
 question.innerHTML = questions[current].question;
 
@@ -139,6 +173,8 @@ shuffle(questions);
 loadQuestion();
 
 function checkAnswer(){
+
+clearInterval(interval);
 
 if(selected==-1){
 
@@ -188,6 +224,7 @@ current++;
 if(current<questions.length){
 
 loadQuestion();
+clearInterval(interval);
 
 }
 else{
