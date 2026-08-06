@@ -58,7 +58,6 @@ return array;
 
 }
 
-
 function loadQuestion(){
 
 selected=-1;
@@ -77,7 +76,6 @@ progressFill.style.width=
 
 quizDayBox.innerHTML="🟣 Quiz Day "+quizDay;
 question.innerHTML=questions[current].question;
-
 
 options.forEach(function(option,index){
 
