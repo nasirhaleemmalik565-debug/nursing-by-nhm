@@ -1,4 +1,5 @@
 alert(questionBank.length);
+
 // Daily Quiz Settings
 
 const QUESTIONS_PER_DAY = 10;
