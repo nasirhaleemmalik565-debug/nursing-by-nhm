@@ -15,3 +15,27 @@ function toggleFav(btn){
     }
 
 }
+
+// ===============================
+// Navigation Drawer
+// ===============================
+
+function openDrawer(){
+
+document.getElementById("drawer")
+.classList.add("active");
+
+document.getElementById("overlay")
+.classList.add("active");
+
+}
+
+function closeDrawer(){
+
+document.getElementById("drawer")
+.classList.remove("active");
+
+document.getElementById("overlay")
+.classList.remove("active");
+
+}
