@@ -1,4 +1,4 @@
-alert("TEST 123");
+alert(questionBank.length);
 
 // Daily Quiz Settings
 
