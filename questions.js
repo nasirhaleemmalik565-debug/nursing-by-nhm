@@ -714,7 +714,7 @@ options:[
 {text:"Vitamin K",correct:false}
 ],
 explanation:"Atropine is the primary antidote used in organophosphate poisoning."
-}
+},
 
 {
 id:51,
