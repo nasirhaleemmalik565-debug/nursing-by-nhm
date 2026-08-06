@@ -477,7 +477,7 @@ explanation:"The carotid artery is the recommended pulse site for adults during 
 },
 
 {
-id:31,
+id:41,
 question:"Which artery carries deoxygenated blood?",
 options:[
 {text:"Pulmonary artery",correct:true},
@@ -489,7 +489,7 @@ explanation:"The pulmonary artery carries deoxygenated blood from the right vent
 },
 
 {
-id:32,
+id:42,
 question:"The normal hemoglobin level in an adult male is:",
 options:[
 {text:"8–10 g/dL",correct:false},
@@ -501,7 +501,7 @@ explanation:"Normal hemoglobin in adult males is approximately 13–18 g/dL."
 },
 
 {
-id:33,
+id:43,
 question:"The largest lobe of the brain is:",
 options:[
 {text:"Frontal lobe",correct:true},
@@ -513,7 +513,7 @@ explanation:"The frontal lobe is the largest lobe of the cerebral cortex."
 },
 
 {
-id:34,
+id:44,
 question:"The normal pH of urine is:",
 options:[
 {text:"2.0–3.0",correct:false},
@@ -525,7 +525,7 @@ explanation:"Normal urine pH usually ranges from 4.5 to 8.0."
 },
 
 {
-id:35,
+id:45,
 question:"Which chamber pumps blood into the pulmonary artery?",
 options:[
 {text:"Right atrium",correct:false},
@@ -537,7 +537,7 @@ explanation:"The right ventricle pumps deoxygenated blood into the pulmonary art
 },
 
 {
-id:36,
+id:46,
 question:"The normal respiratory rate of a newborn is:",
 options:[
 {text:"10–20/min",correct:false},
@@ -549,7 +549,7 @@ explanation:"A healthy newborn normally breathes 30–60 times per minute."
 },
 
 {
-id:37,
+id:47,
 question:"The strongest bone in the human body is:",
 options:[
 {text:"Humerus",correct:false},
@@ -561,7 +561,7 @@ explanation:"The femur is the longest and strongest bone in the human body."
 },
 
 {
-id:38,
+id:48,
 question:"Which electrolyte is mainly responsible for nerve impulse transmission?",
 options:[
 {text:"Potassium",correct:false},
@@ -573,7 +573,7 @@ explanation:"Sodium plays a key role in the generation and transmission of nerve
 },
 
 {
-id:39,
+id:49,
 question:"Which valve lies between the left atrium and left ventricle?",
 options:[
 {text:"Tricuspid valve",correct:false},
@@ -585,7 +585,7 @@ explanation:"The mitral (bicuspid) valve separates the left atrium and left vent
 },
 
 {
-id:40,
+id:50,
 question:"Which vitamin deficiency causes Rickets in children?",
 options:[
 {text:"Vitamin A",correct:false},
@@ -596,7 +596,7 @@ options:[
 explanation:"Vitamin D deficiency leads to rickets in children."
 },
 {
-id:41,
+id:51,
 question:"Which organ stores bile?",
 options:[
 {text:"Liver",correct:false},
@@ -608,7 +608,7 @@ explanation:"The gallbladder stores and concentrates bile produced by the liver.
 },
 
 {
-id:42,
+id:52,
 question:"The normal intracranial pressure (ICP) in adults is:",
 options:[
 {text:"0–5 mmHg",correct:false},
@@ -620,7 +620,7 @@ explanation:"Normal adult intracranial pressure is 5–15 mmHg."
 },
 
 {
-id:43,
+id:53,
 question:"The largest white blood cell is:",
 options:[
 {text:"Lymphocyte",correct:false},
@@ -632,7 +632,7 @@ explanation:"Monocytes are the largest circulating white blood cells."
 },
 
 {
-id:44,
+id:54,
 question:"The normal serum sodium level is:",
 options:[
 {text:"110–120 mEq/L",correct:false},
@@ -644,7 +644,7 @@ explanation:"Normal serum sodium concentration is 135–145 mEq/L."
 },
 
 {
-id:45,
+id:55,
 question:"Which chamber of the heart pumps oxygenated blood to the body?",
 options:[
 {text:"Right atrium",correct:false},
@@ -656,7 +656,7 @@ explanation:"The left ventricle pumps oxygenated blood into the aorta."
 },
 
 {
-id:46,
+id:56,
 question:"Which blood vessel has the highest blood pressure?",
 options:[
 {text:"Capillaries",correct:false},
@@ -668,7 +668,7 @@ explanation:"The aorta receives blood directly from the left ventricle and has t
 },
 
 {
-id:47,
+id:57,
 question:"The normal total white blood cell count is:",
 options:[
 {text:"1,000–3,000/mm³",correct:false},
@@ -680,7 +680,7 @@ explanation:"The normal WBC count is 4,000–11,000 cells/mm³."
 },
 
 {
-id:48,
+id:58,
 question:"Which cranial nerve is responsible for hearing?",
 options:[
 {text:"Facial nerve",correct:false},
@@ -692,7 +692,7 @@ explanation:"The vestibulocochlear nerve (CN VIII) is responsible for hearing an
 },
 
 {
-id:49,
+id:59,
 question:"The normal capillary refill time is:",
 options:[
 {text:"Less than 2 seconds",correct:true},
@@ -704,7 +704,7 @@ explanation:"Normal capillary refill time is less than 2 seconds."
 },
 
 {
-id:50,
+id:60,
 question:"The antidote for organophosphate poisoning is:",
 options:[
 {text:"Naloxone",correct:false},
@@ -716,7 +716,7 @@ explanation:"Atropine is the primary antidote used in organophosphate poisoning.
 },
 
 {
-id:51,
+id:61,
 question:"Which electrolyte imbalance is most commonly associated with peaked T waves on ECG?",
 options:[
 {text:"Hypokalemia",correct:false},
@@ -728,7 +728,7 @@ explanation:"Hyperkalemia classically causes tall peaked T waves on ECG."
 },
 
 {
-id:52,
+id:62,
 question:"The most common site for intramuscular injection in adults is:",
 options:[
 {text:"Deltoid muscle",correct:false},
@@ -740,7 +740,7 @@ explanation:"The ventrogluteal site is considered the safest IM injection site i
 },
 
 {
-id:53,
+id:63,
 question:"Which acid-base imbalance is commonly seen in prolonged vomiting?",
 options:[
 {text:"Metabolic acidosis",correct:false},
@@ -752,7 +752,7 @@ explanation:"Loss of gastric acid during vomiting causes metabolic alkalosis."
 },
 
 {
-id:54,
+id:64,
 question:"Which electrolyte is primarily responsible for muscle contraction?",
 options:[
 {text:"Calcium",correct:true},
@@ -764,7 +764,7 @@ explanation:"Calcium is essential for skeletal and cardiac muscle contraction."
 },
 
 {
-id:55,
+id:65,
 question:"The normal Glasgow Coma Scale (GCS) score is:",
 options:[
 {text:"10",correct:false},
@@ -776,7 +776,7 @@ explanation:"The maximum and normal GCS score is 15."
 },
 
 {
-id:56,
+id:66,
 question:"Which insulin has the fastest onset of action?",
 options:[
 {text:"Regular insulin",correct:false},
@@ -788,7 +788,7 @@ explanation:"Insulin lispro is a rapid-acting insulin with the fastest onset."
 },
 
 {
-id:57,
+id:67,
 question:"The normal serum potassium level is:",
 options:[
 {text:"2.0–3.0 mEq/L",correct:false},
@@ -800,7 +800,7 @@ explanation:"Normal serum potassium is 3.5–5.0 mEq/L."
 },
 
 {
-id:58,
+id:68,
 question:"The first assessment technique during physical examination is:",
 options:[
 {text:"Palpation",correct:false},
@@ -812,7 +812,7 @@ explanation:"Inspection is always the first step of physical examination."
 },
 
 {
-id:59,
+id:69,
 question:"Which vitamin deficiency causes megaloblastic anemia?",
 options:[
 {text:"Vitamin B12",correct:true},
@@ -824,7 +824,7 @@ explanation:"Vitamin B12 deficiency commonly causes megaloblastic anemia."
 },
 
 {
-id:60,
+id:70,
 question:"The normal central venous pressure (CVP) is:",
 options:[
 {text:"0–2 cm H₂O",correct:false},
@@ -836,7 +836,7 @@ explanation:"Normal CVP is approximately 5–10 cm H₂O."
 },
 
 {
-id:61,
+id:71,
 question:"Which electrolyte is the major extracellular cation?",
 options:[
 {text:"Potassium",correct:false},
@@ -848,7 +848,7 @@ explanation:"Sodium is the major extracellular cation responsible for maintainin
 },
 
 {
-id:62,
+id:72,
 question:"The normal adult systolic blood pressure is approximately:",
 options:[
 {text:"80 mmHg",correct:false},
@@ -860,7 +860,7 @@ explanation:"Normal systolic blood pressure in adults is around 100–120 mmHg."
 },
 
 {
-id:63,
+id:73,
 question:"Which valve prevents backflow from the left ventricle into the left atrium?",
 options:[
 {text:"Tricuspid valve",correct:false},
@@ -872,7 +872,7 @@ explanation:"The mitral valve prevents regurgitation into the left atrium."
 },
 
 {
-id:64,
+id:74,
 question:"The normal serum calcium level is:",
 options:[
 {text:"4–6 mg/dL",correct:false},
@@ -884,7 +884,7 @@ explanation:"Normal serum calcium is approximately 8.5–10.5 mg/dL."
 },
 
 {
-id:65,
+id:75,
 question:"Which microorganism is the most common cause of urinary tract infection?",
 options:[
 {text:"Staphylococcus aureus",correct:false},
@@ -896,7 +896,7 @@ explanation:"E. coli is responsible for the majority of community-acquired UTIs.
 },
 
 {
-id:66,
+id:76,
 question:"Which artery is commonly used during cardiopulmonary resuscitation to assess circulation?",
 options:[
 {text:"Radial artery",correct:false},
@@ -908,7 +908,7 @@ explanation:"The carotid artery is checked during CPR in adults."
 },
 
 {
-id:67,
+id:77,
 question:"The normal adult tidal volume is approximately:",
 options:[
 {text:"100 mL",correct:false},
@@ -920,7 +920,7 @@ explanation:"Normal tidal volume in adults is about 500 mL."
 },
 
 {
-id:68,
+id:78,
 question:"The most abundant plasma protein is:",
 options:[
 {text:"Globulin",correct:false},
@@ -932,7 +932,7 @@ explanation:"Albumin is the most abundant plasma protein."
 },
 
 {
-id:69,
+id:79,
 question:"Which part of the neuron receives incoming impulses?",
 options:[
 {text:"Axon",correct:false},
@@ -944,7 +944,7 @@ explanation:"Dendrites receive nerve impulses from other neurons."
 },
 
 {
-id:70,
+id:80,
 question:"The normal hematocrit value in adults is approximately:",
 options:[
 {text:"10–20%",correct:false},
@@ -956,7 +956,7 @@ explanation:"Normal hematocrit varies by sex but generally ranges from 36–54%.
 },
 
 {
-id:71,
+id:81,
 question:"Which vitamin deficiency causes Pernicious anemia?",
 options:[
 {text:"Vitamin A",correct:false},
@@ -968,7 +968,7 @@ explanation:"Pernicious anemia occurs due to Vitamin B12 deficiency caused by la
 },
 
 {
-id:72,
+id:82,
 question:"The normal cerebrospinal fluid (CSF) is:",
 options:[
 {text:"Cloudy",correct:false},
@@ -980,7 +980,7 @@ explanation:"Normal CSF is clear and colorless."
 },
 
 {
-id:73,
+id:83,
 question:"Which blood component is mainly responsible for oxygen transport?",
 options:[
 {text:"Platelets",correct:false},
@@ -992,7 +992,7 @@ explanation:"Hemoglobin in red blood cells transports oxygen."
 },
 
 {
-id:74,
+id:84,
 question:"The normal serum creatinine level in adults is:",
 options:[
 {text:"0.6–1.2 mg/dL",correct:true},
@@ -1004,7 +1004,7 @@ explanation:"Normal serum creatinine is approximately 0.6–1.2 mg/dL."
 },
 
 {
-id:75,
+id:85,
 question:"Which chamber of the heart receives deoxygenated blood from the body?",
 options:[
 {text:"Left atrium",correct:false},
@@ -1016,7 +1016,7 @@ explanation:"The right atrium receives deoxygenated blood through the superior a
 },
 
 {
-id:76,
+id:86,
 question:"Which electrolyte imbalance commonly causes muscle weakness and cardiac arrhythmias?",
 options:[
 {text:"Hypokalemia",correct:true},
@@ -1028,7 +1028,7 @@ explanation:"Hypokalemia commonly causes muscle weakness and ECG abnormalities."
 },
 
 {
-id:77,
+id:87,
 question:"The normal arterial oxygen partial pressure (PaO₂) is:",
 options:[
 {text:"40–60 mmHg",correct:false},
@@ -1040,7 +1040,7 @@ explanation:"Normal arterial PaO₂ is 80–100 mmHg."
 },
 
 {
-id:78,
+id:88,
 question:"Which lobe of the brain is primarily responsible for vision?",
 options:[
 {text:"Frontal lobe",correct:false},
@@ -1052,7 +1052,7 @@ explanation:"The occipital lobe contains the primary visual cortex."
 },
 
 {
-id:79,
+id:89,
 question:"Which vitamin deficiency causes Bleeding gums?",
 options:[
 {text:"Vitamin A",correct:false},
@@ -1064,7 +1064,7 @@ explanation:"Vitamin C deficiency leads to scurvy, characterized by bleeding gum
 },
 
 {
-id:80,
+id:90,
 question:"The normal serum magnesium level is:",
 options:[
 {text:"0.5–1.0 mg/dL",correct:false},
@@ -1075,7 +1075,7 @@ options:[
 explanation:"Normal serum magnesium ranges from 1.5–2.5 mg/dL."
 },
 {
-id:81,
+id:91,
 question:"Which cranial nerve is responsible for the sense of smell?",
 options:[
 {text:"Optic nerve",correct:false},
@@ -1087,7 +1087,7 @@ explanation:"The olfactory nerve (CN I) carries the sense of smell."
 },
 
 {
-id:82,
+id:92,
 question:"Which blood vessel carries oxygenated blood from the lungs to the heart?",
 options:[
 {text:"Pulmonary artery",correct:false},
@@ -1099,7 +1099,7 @@ explanation:"Pulmonary veins carry oxygenated blood from the lungs to the left a
 },
 
 {
-id:83,
+id:93,
 question:"The normal adult body mass index (BMI) is:",
 options:[
 {text:"16–18.4 kg/m²",correct:false},
@@ -1111,7 +1111,7 @@ explanation:"A BMI of 18.5–24.9 kg/m² is considered normal."
 },
 
 {
-id:84,
+id:94,
 question:"Which white blood cell is primarily responsible for fighting bacterial infections?",
 options:[
 {text:"Lymphocyte",correct:false},
@@ -1123,7 +1123,7 @@ explanation:"Neutrophils are the first line of defense against bacterial infecti
 },
 
 {
-id:85,
+id:95,
 question:"Which hormone decreases blood glucose levels?",
 options:[
 {text:"Glucagon",correct:false},
@@ -1135,7 +1135,7 @@ explanation:"Insulin lowers blood glucose by promoting glucose uptake into cells
 },
 
 {
-id:86,
+id:96,
 question:"The normal serum bilirubin level is:",
 options:[
 {text:"0.2–1.2 mg/dL",correct:true},
@@ -1147,7 +1147,7 @@ explanation:"Normal total serum bilirubin ranges from 0.2–1.2 mg/dL."
 },
 
 {
-id:87,
+id:97,
 question:"Which valve is located between the right atrium and right ventricle?",
 options:[
 {text:"Mitral valve",correct:false},
@@ -1159,7 +1159,7 @@ explanation:"The tricuspid valve separates the right atrium from the right ventr
 },
 
 {
-id:88,
+id:98,
 question:"The normal arterial carbon dioxide partial pressure (PaCO₂) is:",
 options:[
 {text:"20–30 mmHg",correct:false},
@@ -1171,7 +1171,7 @@ explanation:"Normal PaCO₂ is 35–45 mmHg."
 },
 
 {
-id:89,
+id:99,
 question:"Which electrolyte is the major extracellular anion?",
 options:[
 {text:"Potassium",correct:false},
@@ -1183,7 +1183,7 @@ explanation:"Chloride is the major extracellular anion."
 },
 
 {
-id:90,
+id:100,
 question:"The average lifespan of a red blood cell is:",
 options:[
 {text:"30 days",correct:false},
@@ -1194,7 +1194,7 @@ options:[
 explanation:"The average lifespan of an RBC is about 120 days."
 },
 {
-id:91,
+id:101,
 question:"Which chamber of the heart has the lowest pressure?",
 options:[
 {text:"Right atrium",correct:true},
@@ -1206,7 +1206,7 @@ explanation:"The right atrium normally has the lowest pressure among the four ch
 },
 
 {
-id:92,
+id:102,
 question:"Which artery supplies oxygenated blood to the heart muscle?",
 options:[
 {text:"Pulmonary artery",correct:false},
@@ -1218,7 +1218,7 @@ explanation:"The coronary arteries supply oxygenated blood to the myocardium."
 },
 
 {
-id:93,
+id:103,
 question:"Which electrolyte is mainly responsible for maintaining extracellular fluid volume?",
 options:[
 {text:"Potassium",correct:false},
@@ -1230,7 +1230,7 @@ explanation:"Sodium is the primary determinant of extracellular fluid volume."
 },
 
 {
-id:94,
+id:104,
 question:"Which organ is primarily responsible for detoxification of drugs?",
 options:[
 {text:"Kidney",correct:false},
@@ -1242,7 +1242,7 @@ explanation:"The liver metabolizes and detoxifies most drugs."
 },
 
 {
-id:95,
+id:105,
 question:"The normal blood urea nitrogen (BUN) level is:",
 options:[
 {text:"2–5 mg/dL",correct:false},
@@ -1254,7 +1254,7 @@ explanation:"Normal BUN is approximately 7–20 mg/dL."
 },
 
 {
-id:96,
+id:106,
 question:"Which cranial nerve controls most eye movements?",
 options:[
 {text:"Optic nerve",correct:false},
@@ -1266,7 +1266,7 @@ explanation:"The oculomotor nerve (CN III) controls most extraocular muscles."
 },
 
 {
-id:97,
+id:107,
 question:"Which blood component is primarily responsible for clot formation?",
 options:[
 {text:"Red blood cells",correct:false},
@@ -1278,7 +1278,7 @@ explanation:"Platelets initiate and help form blood clots."
 },
 
 {
-id:98,
+id:108,
 question:"The normal oral body temperature is approximately:",
 options:[
 {text:"35°C",correct:false},
@@ -1290,7 +1290,7 @@ explanation:"The average normal oral temperature is about 37°C (98.6°F)."
 },
 
 {
-id:99,
+id:109,
 question:"Which electrolyte imbalance commonly produces muscle cramps and tetany?",
 options:[
 {text:"Hypernatremia",correct:false},
@@ -1302,7 +1302,7 @@ explanation:"Hypocalcemia increases neuromuscular excitability, causing tetany."
 },
 
 {
-id:100,
+id:110,
 question:"Which valve prevents backflow of blood from the aorta into the left ventricle?",
 options:[
 {text:"Mitral valve",correct:false},
