@@ -1,5 +1,3 @@
-alert("Questions Loaded");
-
 let questionBank=[
 
 {
