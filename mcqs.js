@@ -54,6 +54,8 @@ const nextBtn=document.getElementById("nextBtn");
 const progressText=document.getElementById("progressText");
 const progressFill=document.getElementById("progressFill");
 const timerBox=document.getElementById("timer");
+const quizDayBox=document.getElementById("quizDay");
+
 function shuffle(array){
 
 for(let i=array.length-1;i>0;i--){
@@ -86,6 +88,7 @@ progressText.innerHTML=
 progressFill.style.width=
 ((current+1)/questions.length*100)+"%";
 
+quizDayBox.innerHTML="🟣 Quiz Day "+quizDay;
 question.innerHTML=questions[current].question;
 
 
@@ -196,7 +199,20 @@ loadQuestion();
 
 }
 else{
+if(quizDay < Math.ceil(questionBank.length / QUESTIONS_PER_DAY)){
 
+quizDay++;
+
+localStorage.setItem("quizDay",quizDay);
+
+}
+else{
+
+quizDay = 1;
+
+localStorage.setItem("quizDay",1);
+
+}
 let percentage=Math.round((score/questions.length)*100);
 
 let message="";
