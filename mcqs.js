@@ -1,82 +1,127 @@
-
+// ===============================
 // Daily Quiz Settings
+// ===============================
+
 const QUESTIONS_PER_DAY = 10;
 
-// Quiz Day
+// Today's Date
 const today = new Date().toDateString();
 
-let quizDay = Number(localStorage.getItem("quizDay")) || 1;
+// Quiz Day
+let quizDay =
+Number(localStorage.getItem("quizDay")) || 1;
 
+// Last completed date
 let lastCompletedDate =
 localStorage.getItem("lastCompletedDate");
 
-if(lastCompletedDate && lastCompletedDate !== today){
+// Total Quiz Days
+const totalQuizDays =
+Math.ceil(questionBank.length / QUESTIONS_PER_DAY);
+
+// Move to next quiz only if a new day has started
+if(
+lastCompletedDate &&
+lastCompletedDate !== today
+){
 
 quizDay++;
 
-if(quizDay > Math.ceil(questionBank.length / QUESTIONS_PER_DAY)){
+if(quizDay>totalQuizDays){
 
-quizDay = 1;
+quizDay=1;
+
+}
+
+localStorage.setItem(
+"quizDay",
+quizDay
+);
+
+localStorage.removeItem(
+"lastCompletedDate"
+);
 
 }
 
-localStorage.setItem("quizDay",quizDay);
+// Today's Question Range
+let startIndex=
+(quizDay-1)*QUESTIONS_PER_DAY;
 
-localStorage.removeItem("lastCompletedDate");
+let endIndex=
+startIndex+QUESTIONS_PER_DAY;
 
-}
-// Starting Question
-let startIndex = (quizDay - 1) * QUESTIONS_PER_DAY;
-
-// Ending Question
-let endIndex = startIndex + QUESTIONS_PER_DAY;
-
-// Daily Questions
-let questions = questionBank.slice(startIndex, endIndex);
+// Today's Questions
+let questions=
+questionBank.slice(
+startIndex,
+endIndex
+);
 
 // Safety Check
-if(questions.length === 0){
+if(questions.length===0){
 
-quizDay = 1;
+quizDay=1;
 
-localStorage.setItem("quizDay",1);
+localStorage.setItem(
+"quizDay",
+1
+);
 
-startIndex = 0;
+startIndex=0;
 
-endIndex = QUESTIONS_PER_DAY;
+endIndex=QUESTIONS_PER_DAY;
 
-questions = questionBank.slice(startIndex,endIndex);
+questions=
+questionBank.slice(
+startIndex,
+endIndex
+);
 
 }
+
+// Show popup only if today's quiz is already completed
+const showPopup =
+lastCompletedDate===today;
+
+// ===============================
+// Variables
+// ===============================
 
 let current=0;
 let score=0;
 let selected=-1;
+
 let timerValue=30;
 let timer;
 
-const question=document.getElementById("question");
-const options=document.querySelectorAll(".option");
-const result=document.getElementById("result");
-const nextBtn=document.getElementById("nextBtn");
-const progressText=document.getElementById("progressText");
-const progressFill=document.getElementById("progressFill");
-const timerBox=document.getElementById("timer");
-const quizDayBox=document.getElementById("quizDay");
+const question=
+document.getElementById("question");
 
-function shuffle(array){
+const options=
+document.querySelectorAll(".option");
 
-for(let i=array.length-1;i>0;i--){
+const result=
+document.getElementById("result");
 
-let j=Math.floor(Math.random()*(i+1));
+const nextBtn=
+document.getElementById("nextBtn");
 
-[array[i],array[j]]=[array[j],array[i]];
+const progressText=
+document.getElementById("progressText");
 
-}
+const progressFill=
+document.getElementById("progressFill");
 
-return array;
+const timerBox=
+document.getElementById("timer");
 
-}
+const quizDayBox=
+document.getElementById("quizDay");
+
+// ===============================
+// Load Question
+// ===============================
 
 function loadQuestion(){
 
@@ -94,17 +139,23 @@ progressText.innerHTML=
 progressFill.style.width=
 ((current+1)/questions.length*100)+"%";
 
-quizDayBox.innerHTML="🟣 Quiz Day "+quizDay;
-question.innerHTML=questions[current].question;
+quizDayBox.innerHTML=
+"🟣 Quiz Day "+quizDay;
+
+question.innerHTML=
+questions[current].question;
 
 options.forEach(function(option,index){
 
 option.className="option";
 
 option.innerHTML=
-String.fromCharCode(65+index)+". "+questions[current].options[index].text;
+String.fromCharCode(65+index)+". "+
+questions[current].options[index].text;
 
-option.dataset.correct=questions[current].options[index].correct;
+option.dataset.correct=
+questions[current].options[index].correct;
+
 option.onclick=function(){
 
 options.forEach(function(o){
@@ -125,13 +176,15 @@ clearInterval(timer);
 
 timerValue=30;
 
-timerBox.innerHTML="⏱️ "+timerValue+" sec";
+timerBox.innerHTML=
+"⏱️ "+timerValue+" sec";
 
 timer=setInterval(function(){
 
 timerValue--;
 
-timerBox.innerHTML="⏱️ "+timerValue+" sec";
+timerBox.innerHTML=
+"⏱️ "+timerValue+" sec";
 
 if(timerValue<=0){
 
@@ -145,6 +198,10 @@ checkAnswer();
 
 }
 
+// ===============================
+// Check Answer
+// ===============================
+
 function checkAnswer(){
 
 clearInterval(timer);
@@ -152,8 +209,6 @@ clearInterval(timer);
 if(selected==-1){
 
 alert("Please select an answer.");
-
-loadQuestion();
 
 return;
 
@@ -193,6 +248,9 @@ result.style.color="red";
 nextBtn.style.display="block";
 
 }
+// ===============================
+// Next Button
+// ===============================
 
 nextBtn.onclick=function(){
 
@@ -204,8 +262,17 @@ loadQuestion();
 
 }
 else{
-localStorage.setItem("lastCompletedDate",today);
-let percentage=Math.round((score/questions.length)*100);
+
+// Mark today's quiz as completed
+localStorage.setItem(
+"lastCompletedDate",
+today
+);
+
+let percentage=
+Math.round(
+(score/questions.length)*100
+);
 
 let message="";
 
@@ -274,4 +341,37 @@ Back to Home
 
 };
 
+// ===============================
+// Start Quiz
+// ===============================
+
+function startAgain(){
+
+document.getElementById("attemptPopup").style.display="none";
+
+current=0;
+score=0;
+selected=-1;
+
 loadQuestion();
+
+}
+
+// ===============================
+// Page Load
+// ===============================
+
+window.onload=function(){
+
+if(showPopup){
+
+document.getElementById("attemptPopup").style.display="flex";
+
+}
+else{
+
+loadQuestion();
+
+}
+
+};
