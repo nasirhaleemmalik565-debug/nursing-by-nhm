@@ -42,5 +42,66 @@ placeholder="Search pearls...">
 Search feature coming soon...
 </p>
 
+
+<script src="searchData.js"></script>
+
+<script>
+
+const input=document.querySelector(".search-box");
+const info=document.querySelector(".info");
+
+input.addEventListener("keyup",function(){
+
+let value=this.value.toLowerCase().trim();
+
+if(value===""){
+
+info.innerHTML="Search feature ready...";
+
+return;
+
+}
+
+let results=searchData.filter(function(item){
+
+return item.title.toLowerCase().includes(value);
+
+});
+
+if(results.length===0){
+
+info.innerHTML="<p>No pearls found.</p>";
+
+return;
+
+}
+
+let html="";
+
+results.forEach(function(item){
+
+html+=`
+<div
+style="
+background:white;
+padding:14px;
+margin:12px;
+border-radius:12px;
+box-shadow:0 2px 8px rgba(0,0,0,.1);
+cursor:pointer;"
+onclick="location.href='${item.page}'">
+
+${item.title}
+
+</div>
+`;
+
+});
+
+info.innerHTML=html;
+
+});
+
+</script>
 </body>
 </html>
