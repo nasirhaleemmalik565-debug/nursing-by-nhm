@@ -147,6 +147,55 @@ margin:0;
 z-index:1;
 }
 
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.45);
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+z-index:999;
+}
+
+.popup-box{
+
+background:white;
+
+width:90%;
+max-width:360px;
+
+padding:25px;
+
+border-radius:18px;
+
+text-align:center;
+
+box-shadow:0 5px 20px rgba(0,0,0,.2);
+
+}
+
+.popup-box h2{
+
+color:#6A1B9A;
+
+margin-bottom:15px;
+
+}
+
+.popup-box p{
+
+line-height:1.5;
+
+margin-bottom:18px;
+
+}
+
 </style>
 
 </head>
@@ -194,6 +243,32 @@ Next Question →
 
 <script src="questions.js"></script>
 <script src="mcqs.js"></script>
+<div id="attemptPopup" class="popup">
+
+<div class="popup-box">
+
+<h2>✅ Quiz Already Attempted</h2>
+
+<p>
+You have already attempted today's Daily MCQ quiz.
+</p>
+
+<p style="margin-top:10px;">
+Would you like to attempt it again?
+</p>
+
+<button onclick="startAgain()">
+🔁 Attempt Again
+</button>
+
+<button onclick="location.href='index.html'"
+style="background:#666;">
+← Back to Home
+</button>
+
+</div>
+
+</div>
 
 </body>
 </html>
