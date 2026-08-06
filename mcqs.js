@@ -1,4 +1,4 @@
-console.log(questionBank);
+alert(questionBank.length);
 
 // Daily Quiz Settings
 
