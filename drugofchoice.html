@@ -1,239 +1,483 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Drug of Choice</title>
+<title>Drug of Choice | Nursing by NHM</title>
 
-<style>
+<link rel="stylesheet" href="style.css">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:#f5f3ff;
-}
-
-header{
-background:#6A1B9A;
-color:white;
-padding:18px;
-display:flex;
-align-items:center;
-position:sticky;
-top:0;
-z-index:999;
-box-shadow:0 2px 8px rgba(0,0,0,.15);
-}
-
-header a{
-color:white;
-text-decoration:none;
-font-size:26px;
-}
-
-header h2{
-margin:0 auto;
-font-size:24px;
-}
-
-.card{
-background:white;
-border-radius:22px;
-padding:18px;
-margin-bottom:20px;
-box-shadow:0 2px 10px rgba(0,0,0,.08);
-}
-
-.fav-btn{
-width:52px;
-height:52px;
-border:none;
-border-radius:50%;
-background:#f4f4f4;
-font-size:28px;
-color:#9a9a9a;
-margin-bottom:12px;
-}
-
-.card-title{
-font-size:18px;
-font-weight:700;
-line-height:1.45;
-margin-bottom:14px;
-color:#222;
-}
-
-.card-answer{
-font-size:18px;
-font-weight:700;
-color:#6A1B9A;
-line-height:1.45;
-}
-
-
-</style>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 
 </head>
 
 <body>
 
-<header>
+<div class="appbar">
 
-<a href="pearls.html">←</a>
+<a href="pearls.html" class="back-btn">←</a>
 
-<h2>Drug of Choice</h2>
+<div class="appbar-title">
+Drug of Choice
+</div>
 
-</header>
+</div>
 
 <div class="container">
 
-<div class="heading">
+<div class="section-title">
 DRUG OF CHOICE
 </div>
-<div class="card">
-<button class="fav-btn" onclick="toggleFav(this)">♡</button>
-<div class="card-title">1. Drug of choice for Anaphylaxis</div>
-<div class="card-answer">Adrenaline (Epinephrine)</div>
+
+<!-- CARD 1 -->
+
+<div class="pearl-card">
+
+<div class="pearl-top">
+
+<div class="pearl-question">
+1. Drug of choice for Anaphylaxis
 </div>
 
-<div class="card">
-<button class="fav-btn" onclick="toggleFav(this)">♡</button>
-<div class="card-title">2. Drug of choice for Status Epilepticus</div>
-<div class="card-answer">Lorazepam</div>
+<button class="fav-btn" onclick="toggleFav(this)">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+
 </div>
 
-<div class="card">
-<button class="fav-btn" onclick="toggleFav(this)">♡</button>
-<div class="card-title">3. Drug of choice for Supraventricular Tachycardia (SVT)</div>
-<div class="card-answer">Adenosine</div>
+<div class="pearl-answer">
+Adrenaline (Epinephrine)
 </div>
 
-<div class="card">
-<button class="fav-btn" onclick="toggleFav(this)">♡</button>
-<div class="card-title">4. Drug of choice for Tuberculosis</div>
-<div class="card-answer">
+</div>
+
+<!-- CARD 2 -->
+
+<div class="pearl-card">
+
+<div class="pearl-top">
+
+<div class="pearl-question">
+2. Drug of choice for Status Epilepticus
+</div>
+
+<button class="fav-btn" onclick="toggleFav(this)">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+
+</div>
+
+<div class="pearl-answer">
+Lorazepam
+</div>
+
+</div>
+
+<!-- CARD 3 -->
+
+<div class="pearl-card">
+
+<div class="pearl-top">
+
+<div class="pearl-question">
+3. Drug of choice for Supraventricular Tachycardia (SVT)
+</div>
+
+<button class="fav-btn" onclick="toggleFav(this)">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+
+</div>
+
+<div class="pearl-answer">
+Adenosine
+</div>
+
+</div>
+
+<!-- CARD 4 -->
+
+<div class="pearl-card">
+
+<div class="pearl-top">
+
+<div class="pearl-question">
+4. Drug of choice for Tuberculosis
+</div>
+
+<button class="fav-btn" onclick="toggleFav(this)">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+
+</div>
+
+<div class="pearl-answer">
 HRZE Regimen (Isoniazid + Rifampicin + Pyrazinamide + Ethambutol)
 </div>
+
 </div>
 
-<div class="card">
-<button class="fav-btn" onclick="toggleFav(this)">♡</button>
-<div class="card-title">5. Drug of choice for Iron Deficiency Anemia</div>
-<div class="card-answer">Ferrous Sulfate</div>
+<!-- CARD 5 -->
+
+<div class="pearl-card">
+
+<div class="pearl-top">
+
+<div class="pearl-question">
+5. Drug of choice for Iron Deficiency Anemia
 </div>
 
-<div class="card">
-<button class="fav-btn" onclick="toggleFav(this)">♡</button>
-<div class="card-title">6. Drug of choice for Hypoglycemia (Conscious Patient)</div>
-<div class="card-answer">Oral Glucose</div>
+<button class="fav-btn" onclick="toggleFav(this)">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+
 </div>
 
-<div class="card">
-<button class="fav-btn" onclick="toggleFav(this)">♡</button>
-<div class="card-title">7. Drug of choice for Hypoglycemia (Unconscious Patient)</div>
-<div class="card-answer">IV Dextrose</div>
+<div class="pearl-answer">
+Ferrous Sulfate
 </div>
 
-<div class="card">
-<button class="fav-btn" onclick="toggleFav(this)">♡</button>
-<div class="card-title">8. Drug of choice for Postpartum Hemorrhage (PPH)</div>
-<div class="card-answer">Oxytocin</div>
+</div>
+<!-- CARD 6 -->
+
+<div class="pearl-card">
+
+<div class="pearl-top">
+
+<div class="pearl-question">
+6. Drug of choice for Hypoglycemia (Conscious Patient)
 </div>
 
-<div class="card">
-<button class="fav-btn" onclick="toggleFav(this)">♡</button>
-<div class="card-title">9. Drug of choice for Acute Asthma Attack</div>
-<div class="card-answer">Salbutamol</div>
+<button class="fav-btn" onclick="toggleFav(this)">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+
 </div>
 
-<div class="card">
-<button class="fav-btn" onclick="toggleFav(this)">♡</button>
-<div class="card-title">10. Drug of choice for Hypertensive Emergency</div>
-<div class="card-answer">Labetalol</div>
+<div class="pearl-answer">
+Oral Glucose
 </div>
 
-<div class="card">
-<button class="fav-btn" onclick="toggleFav(this)">♡</button>
-<div class="card-title">11. Drug of choice for Organophosphorus Poisoning</div>
-<div class="card-answer">Atropine</div>
 </div>
 
-<div class="card">
-<button class="fav-btn" onclick="toggleFav(this)">♡</button>
-<div class="card-title">12. Drug of choice for Malaria (Plasmodium vivax)</div>
-<div class="card-answer">Chloroquine + Primaquine</div>
+<!-- CARD 7 -->
+
+<div class="pearl-card">
+
+<div class="pearl-top">
+
+<div class="pearl-question">
+7. Drug of choice for Hypoglycemia (Unconscious Patient)
 </div>
 
-<div class="card">
-<button class="fav-btn" onclick="toggleFav(this)">♡</button>
-<div class="card-title">13. Drug of choice for Syphilis</div>
-<div class="card-answer">Benzathine Penicillin G</div>
+<button class="fav-btn" onclick="toggleFav(this)">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+
 </div>
 
-<div class="card">
-<button class="fav-btn" onclick="toggleFav(this)">♡</button>
-<div class="card-title">14. Drug of choice for Enteric Fever (Typhoid)</div>
-<div class="card-answer">Ceftriaxone</div>
-</div>
-<div class="card">
-<button class="fav-btn" onclick="toggleFav(this)">♡</button>
-<div class="card-title">15. Drug of choice for Folic Acid Deficiency</div>
-<div class="card-answer">Folic Acid</div>
+<div class="pearl-answer">
+IV Dextrose
 </div>
 
-<div class="card">
-<button class="fav-btn" onclick="toggleFav(this)">♡</button>
-<div class="card-title">16. Drug of choice for Vitamin B12 Deficiency</div>
-<div class="card-answer">Cyanocobalamin</div>
 </div>
 
-<div class="card">
-<button class="fav-btn" onclick="toggleFav(this)">♡</button>
-<div class="card-title">17. Drug of choice for Status Asthmaticus</div>
-<div class="card-answer">Nebulized Salbutamol</div>
+<!-- CARD 8 -->
+
+<div class="pearl-card">
+
+<div class="pearl-top">
+
+<div class="pearl-question">
+8. Drug of choice for Postpartum Hemorrhage (PPH)
 </div>
 
-<div class="card">
-<button class="fav-btn" onclick="toggleFav(this)">♡</button>
-<div class="card-title">18. Drug of choice for Pulmonary Tuberculosis in Pregnancy</div>
-<div class="card-answer">
+<button class="fav-btn" onclick="toggleFav(this)">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+
+</div>
+
+<div class="pearl-answer">
+Oxytocin
+</div>
+
+</div>
+
+<!-- CARD 9 -->
+
+<div class="pearl-card">
+
+<div class="pearl-top">
+
+<div class="pearl-question">
+9. Drug of choice for Acute Asthma Attack
+</div>
+
+<button class="fav-btn" onclick="toggleFav(this)">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+
+</div>
+
+<div class="pearl-answer">
+Salbutamol
+</div>
+
+</div>
+
+<!-- CARD 10 -->
+
+<div class="pearl-card">
+
+<div class="pearl-top">
+
+<div class="pearl-question">
+10. Drug of choice for Hypertensive Emergency
+</div>
+
+<button class="fav-btn" onclick="toggleFav(this)">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+
+</div>
+
+<div class="pearl-answer">
+Labetalol
+</div>
+
+</div>
+
+<!-- CARD 11 -->
+
+<div class="pearl-card">
+
+<div class="pearl-top">
+
+<div class="pearl-question">
+11. Drug of choice for Organophosphorus Poisoning
+</div>
+
+<button class="fav-btn" onclick="toggleFav(this)">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+
+</div>
+
+<div class="pearl-answer">
+Atropine
+</div>
+
+</div>
+
+<!-- CARD 12 -->
+
+<div class="pearl-card">
+
+<div class="pearl-top">
+
+<div class="pearl-question">
+12. Drug of choice for Malaria (Plasmodium vivax)
+</div>
+
+<button class="fav-btn" onclick="toggleFav(this)">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+
+</div>
+
+<div class="pearl-answer">
+Chloroquine + Primaquine
+</div>
+
+</div>
+
+<!-- CARD 13 -->
+
+<div class="pearl-card">
+
+<div class="pearl-top">
+
+<div class="pearl-question">
+13. Drug of choice for Syphilis
+</div>
+
+<button class="fav-btn" onclick="toggleFav(this)">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+
+</div>
+
+<div class="pearl-answer">
+Benzathine Penicillin G
+</div>
+
+</div>
+
+<!-- CARD 14 -->
+
+<div class="pearl-card">
+
+<div class="pearl-top">
+
+<div class="pearl-question">
+14. Drug of choice for Enteric Fever (Typhoid)
+</div>
+
+<button class="fav-btn" onclick="toggleFav(this)">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+
+</div>
+
+<div class="pearl-answer">
+Ceftriaxone
+</div>
+
+</div>
+
+<!-- CARD 15 -->
+
+<div class="pearl-card">
+
+<div class="pearl-top">
+
+<div class="pearl-question">
+15. Drug of choice for Folic Acid Deficiency
+</div>
+
+<button class="fav-btn" onclick="toggleFav(this)">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+
+</div>
+
+<div class="pearl-answer">
+Folic Acid
+</div>
+
+</div>
+
+<!-- CARD 16 -->
+
+<div class="pearl-card">
+
+<div class="pearl-top">
+
+<div class="pearl-question">
+16. Drug of choice for Vitamin B12 Deficiency
+</div>
+
+<button class="fav-btn" onclick="toggleFav(this)">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+
+</div>
+
+<div class="pearl-answer">
+Cyanocobalamin
+</div>
+
+</div>
+
+<!-- CARD 17 -->
+
+<div class="pearl-card">
+
+<div class="pearl-top">
+
+<div class="pearl-question">
+17. Drug of choice for Status Asthmaticus
+</div>
+
+<button class="fav-btn" onclick="toggleFav(this)">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+
+</div>
+
+<div class="pearl-answer">
+Nebulized Salbutamol
+</div>
+
+</div>
+
+<!-- CARD 18 -->
+
+<div class="pearl-card">
+
+<div class="pearl-top">
+
+<div class="pearl-question">
+18. Drug of choice for Pulmonary Tuberculosis in Pregnancy
+</div>
+
+<button class="fav-btn" onclick="toggleFav(this)">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+
+</div>
+
+<div class="pearl-answer">
 HRZE (Streptomycin Contraindicated)
 </div>
-</div>
-
-<div class="card">
-<button class="fav-btn" onclick="toggleFav(this)">♡</button>
-<div class="card-title">19. Drug of choice for Neonatal Seizures</div>
-<div class="card-answer">Phenobarbital</div>
-</div>
-
-<div class="card">
-<button class="fav-btn" onclick="toggleFav(this)">♡</button>
-<div class="card-title">20. Drug of choice for Eclampsia</div>
-<div class="card-answer">Magnesium Sulfate</div>
-</div>
 
 </div>
 
-<script>
+<!-- CARD 19 -->
 
-function toggleFav(btn){
+<div class="pearl-card">
 
-btn.classList.toggle("active");
+<div class="pearl-top">
 
-btn.innerHTML =
-btn.classList.contains("active") ? "❤" : "♡";
+<div class="pearl-question">
+19. Drug of choice for Neonatal Seizures
+</div>
 
-}
+<button class="fav-btn" onclick="toggleFav(this)">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
 
-</script>
+</div>
+
+<div class="pearl-answer">
+Phenobarbital
+</div>
+
+</div>
+
+<!-- CARD 20 -->
+
+<div class="pearl-card">
+
+<div class="pearl-top">
+
+<div class="pearl-question">
+20. Drug of choice for Eclampsia
+</div>
+
+<button class="fav-btn" onclick="toggleFav(this)">
+<span class="material-icons-outlined">favorite_border</span>
+</button>
+
+</div>
+
+<div class="pearl-answer">
+Magnesium Sulfate
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+Made with ❤️ by Nursing by NHM
+</div>
+
+<script src="app.js"></script>
 
 </body>
 </html>
