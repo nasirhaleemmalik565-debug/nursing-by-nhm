@@ -81,9 +81,11 @@ endIndex
 }
 
 // Show popup only if today's quiz is already completed
-const showPopup =
-lastCompletedDate===today;
+function shouldShowPopup(){
 
+return localStorage.getItem("lastCompletedDate")===today;
+
+}
 // ===============================
 // Variables
 // ===============================
@@ -363,11 +365,12 @@ loadQuestion();
 
 window.onload=function(){
 
-if(showPopup){
+if(shouldShowPopup()){
 
 document.getElementById("attemptPopup").style.display="flex";
 
 }
+
 else{
 
 loadQuestion();
