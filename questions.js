@@ -1,5 +1,4 @@
 let questionBank=[
-
 {
 id:1,
 question:"Which vitamin deficiency causes Night Blindness?",
