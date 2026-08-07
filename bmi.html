@@ -138,9 +138,35 @@ emoji="🔴";
 
 }
 
+let advice = "";
+
+if(bmi < 18.5){
+
+advice = "Increase nutritious food intake and maintain a balanced diet.";
+
+}
+
+else if(bmi < 25){
+
+advice = "Great! Maintain your healthy lifestyle.";
+
+}
+
+else if(bmi < 30){
+
+advice = "Regular exercise and a balanced diet are recommended.";
+
+}
+
+else{
+
+advice = "Consult a healthcare professional for weight management.";
+
+}
+
 document.getElementById("bmiResult").innerHTML =
 
-"<div style='font-size:40px;font-weight:bold;color:"+color+";'>"
+"<div style='font-size:52px;font-weight:bold;color:"+color+";'>"
 
 +bmi.toFixed(1)+
 
@@ -148,7 +174,7 @@ document.getElementById("bmiResult").innerHTML =
 
 +
 
-"<div style='font-size:22px;font-weight:bold;color:"+color+";'>"
+"<div style='font-size:28px;font-weight:bold;color:"+color+";'>"
 
 +emoji+" "+category+
 
@@ -160,14 +186,25 @@ document.getElementById("bmiResult").innerHTML =
 
 +
 
-"<div style='font-size:15px;color:#666;'>"
+"<div style='font-size:17px;color:#666;'>"
 
-+"Healthy BMI Range"
++"❤️ Healthy BMI Range"
 
 +"<br><b>18.5 – 24.9 kg/m²</b>"
 
-+"</div>";
++"</div>"
 
++
+
+"<br>"
+
++
+
+"<div style='background:#F7F7F7;padding:12px;border-radius:12px;'>"
+
++"<b>💡 Advice</b><br>"+advice+
+
+"</div>";
 }
 
 </script>
