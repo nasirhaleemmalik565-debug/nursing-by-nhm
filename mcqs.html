@@ -155,6 +155,8 @@ margin-bottom:16px;
 
 .question{
 
+user-select:none;
+
 font-size:20px;
 
 font-weight:bold;
@@ -167,6 +169,8 @@ margin-bottom:14px;
 
 .option{
 
+user-select:none;
+-webkit-tap-highlight-color:transparent;
 padding:12px 14px;
 
 margin:8px 0;
@@ -258,6 +262,17 @@ transition:.25s;
 button:hover{
 
 opacity:.92;
+
+}
+button:active{
+
+transform:scale(.98);
+
+}
+
+.option:active{
+
+transform:scale(.98);
 
 }
 
