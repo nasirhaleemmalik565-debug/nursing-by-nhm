@@ -1,25 +1,25 @@
-// ===============================
-// Daily Quiz Settings
-// ===============================
+// =======================================
+// DAILY MCQs v3.0
+// Nursing by NHM
+// =======================================
+
+// ---------- SETTINGS ----------
 
 const QUESTIONS_PER_DAY = 10;
 
-// Today's Date
 const today = new Date().toDateString();
 
-// Quiz Day
 let quizDay =
 Number(localStorage.getItem("quizDay")) || 1;
 
-// Last completed date
 let lastCompletedDate =
 localStorage.getItem("lastCompletedDate");
 
-// Total Quiz Days
 const totalQuizDays =
 Math.ceil(questionBank.length / QUESTIONS_PER_DAY);
 
-// Move to next quiz only if a new day has started
+// ---------- NEXT QUIZ DAY ----------
+
 if(
 lastCompletedDate &&
 lastCompletedDate !== today
@@ -27,9 +27,9 @@ lastCompletedDate !== today
 
 quizDay++;
 
-if(quizDay>totalQuizDays){
+if(quizDay > totalQuizDays){
 
-quizDay=1;
+quizDay = 1;
 
 }
 
@@ -44,155 +44,243 @@ localStorage.removeItem(
 
 }
 
-// Today's Question Range
-let startIndex=
-(quizDay-1)*QUESTIONS_PER_DAY;
+// ---------- TODAY'S QUESTIONS ----------
 
-let endIndex=
-startIndex+QUESTIONS_PER_DAY;
+let startIndex =
+(quizDay-1) * QUESTIONS_PER_DAY;
 
-// Today's Questions
-let questions=
+let endIndex =
+startIndex + QUESTIONS_PER_DAY;
+
+let questions =
 questionBank.slice(
 startIndex,
 endIndex
 );
 
-// Safety Check
 if(questions.length===0){
 
-quizDay=1;
+quizDay = 1;
 
 localStorage.setItem(
 "quizDay",
 1
 );
 
-startIndex=0;
-
-endIndex=QUESTIONS_PER_DAY;
-
-questions=
+questions =
 questionBank.slice(
-startIndex,
-endIndex
+0,
+QUESTIONS_PER_DAY
 );
 
 }
 
-// Show popup only if today's quiz is already completed
+// ---------- POPUP ----------
+
 function shouldShowPopup(){
 
-return localStorage.getItem("lastCompletedDate")===today;
+return localStorage.getItem(
+"lastCompletedDate"
+)===today;
 
 }
-// ===============================
-// Variables
-// ===============================
 
-let current=0;
-let score=0;
-let selected=-1;
+// ---------- VARIABLES ----------
 
-let timerValue=30;
+let current = 0;
+
+let score = 0;
+
+let selected = -1;
+
 let timer;
 
-const question=
+let timerValue = 30;
+
+let answered = false;
+
+// ---------- ELEMENTS ----------
+
+const question =
 document.getElementById("question");
 
-const options=
+const options =
 document.querySelectorAll(".option");
 
-const result=
+const result =
 document.getElementById("result");
 
-const nextBtn=
-document.getElementById("nextBtn");
-
-const progressText=
+const progressText =
 document.getElementById("progressText");
 
-const progressFill=
+const progressFill =
 document.getElementById("progressFill");
 
-const timerBox=
+const timerBox =
 document.getElementById("timer");
 
-const quizDayBox=
+const quizDayBox =
 document.getElementById("quizDay");
 
-// ===============================
-// Load Question
-// ===============================
+// ---------- NEXT QUESTION ----------
+
+function nextQuestion(){
+
+current++;
+
+if(current < questions.length){
+
+loadQuestion();
+
+}
+else{
+
+showResult();
+
+}
+
+}
+
+// =======================================
+// LOAD QUESTION
+// =======================================
 
 function loadQuestion(){
 
-selected=-1;
+clearInterval(timer);
 
-result.innerHTML="";
+answered = false;
 
-result.style.color="black";
+selected = -1;
 
-nextBtn.style.display="none";
+timerValue = 30;
 
-progressText.innerHTML=
-"Question "+(current+1)+" / "+questions.length;
+result.innerHTML = "";
 
-progressFill.style.width=
-((current+1)/questions.length*100)+"%";
+progressText.innerHTML =
+"Question " +
+(current + 1) +
+" / " +
+questions.length;
 
-quizDayBox.innerHTML=
-"🟣 Quiz Day "+quizDay;
+progressFill.style.width =
+((current + 1) / questions.length * 100) + "%";
 
-question.innerHTML=
+quizDayBox.innerHTML =
+"🟣 Quiz Day " + quizDay;
+
+question.innerHTML =
 questions[current].question;
+
+// Reset Timer Style
+
+timerBox.style.animation = "none";
+
+timerBox.style.color = "#D32F2F";
+
+timerBox.innerHTML =
+"⏱️ " + timerValue + " sec";
+
+// Load Options
 
 options.forEach(function(option,index){
 
-option.className="option";
+option.className = "option";
 
-option.innerHTML=
-String.fromCharCode(65+index)+". "+
+option.style.pointerEvents = "auto";
+
+option.innerHTML =
+String.fromCharCode(65 + index) +
+". " +
 questions[current].options[index].text;
 
-option.dataset.correct=
+option.dataset.correct =
 questions[current].options[index].correct;
 
-option.onclick=function(){
+option.onclick = function(){
+
+if(answered){
+
+return;
+
+}
+
+answered = true;
+
+selected = index;
 
 options.forEach(function(o){
 
-o.classList.remove("selected");
+o.style.pointerEvents = "none";
 
 });
 
-selected=index;
-
-option.classList.add("selected");
+checkAnswer();
 
 };
 
 });
 
-clearInterval(timer);
+// =======================
+// TIMER
+// =======================
 
-timerValue=30;
-
-timerBox.innerHTML=
-"⏱️ "+timerValue+" sec";
-
-timer=setInterval(function(){
+timer = setInterval(function(){
 
 timerValue--;
 
-timerBox.innerHTML=
-"⏱️ "+timerValue+" sec";
+timerBox.innerHTML =
+"⏱️ " +
+timerValue +
+" sec";
 
-if(timerValue<=0){
+// Last 5 Seconds
+
+if(timerValue <= 5){
+
+timerBox.style.color = "#FF9800";
+
+}
+
+// Last 3 Seconds
+
+if(timerValue <= 3){
+
+timerBox.style.color = "#F44336";
+
+timerBox.style.animation =
+"blink .8s infinite";
+
+}
+
+// Time Up
+
+if(timerValue <= 0){
 
 clearInterval(timer);
 
-checkAnswer();
+answered = true;
+
+timerBox.innerHTML =
+"⏰ Time's Up!";
+
+result.innerHTML =
+"⏰ No Answer Selected";
+
+result.style.color =
+"#F44336";
+
+options.forEach(function(o){
+
+o.style.pointerEvents = "none";
+
+});
+
+setTimeout(function(){
+
+nextQuestion();
+
+},1000);
 
 }
 
@@ -200,9 +288,9 @@ checkAnswer();
 
 }
 
-// ===============================
-// Check Answer
-// ===============================
+// =======================================
+// CHECK ANSWER
+// =======================================
 
 function checkAnswer(){
 
@@ -210,30 +298,40 @@ clearInterval(timer);
 
 if(selected==-1){
 
-alert("Please select an answer.");
-
 return;
 
 }
 
-if(options[selected].dataset.correct=="true"){
+if(
+questions[current]
+.options[selected]
+.correct
+){
 
-options[selected].classList.add("correct");
+options[selected]
+.classList.add("correct");
 
-result.innerHTML="✅ Correct!";
+result.innerHTML =
+"✅ Correct!";
 
-result.style.color="green";
+result.style.color =
+"#2E7D32";
 
 score++;
 
 }
 else{
 
-options[selected].classList.add("wrong");
+options[selected]
+.classList.add("wrong");
 
-options.forEach(function(option){
+options.forEach(function(option,index){
 
-if(option.dataset.correct=="true"){
+if(
+questions[current]
+.options[index]
+.correct
+){
 
 option.classList.add("correct");
 
@@ -241,37 +339,36 @@ option.classList.add("correct");
 
 });
 
-result.innerHTML="❌ Incorrect!";
+result.innerHTML =
+"❌ Incorrect!";
 
-result.style.color="red";
+result.style.color =
+"#C62828";
+
+}
+
+// Auto Next
+
+setTimeout(function(){
+
+nextQuestion();
+
+},1800);
 
 }
 
-nextBtn.style.display="block";
+// =======================================
+// RESULT SCREEN
+// =======================================
 
-}
-// ===============================
-// Next Button
-// ===============================
+function showResult(){
 
-nextBtn.onclick=function(){
-
-current++;
-
-if(current<questions.length){
-
-loadQuestion();
-
-}
-else{
-
-// Mark today's quiz as completed
 localStorage.setItem(
 "lastCompletedDate",
 today
 );
 
-let percentage=
+let percentage =
 Math.round(
 (score/questions.length)*100
 );
@@ -303,36 +400,38 @@ document.querySelector(".card").innerHTML=`
 
 <div style="text-align:center;padding:20px;">
 
-<div style="font-size:60px;">🎉</div>
+<div style="font-size:70px;">
+🎉
+</div>
 
-<h2 style="color:#6A1B9A;margin:10px 0;">
+<h2 style="color:#6A1B9A;margin:12px 0;">
 Quiz Completed
 </h2>
 
-<p style="font-size:20px;">
+<p style="font-size:19px;">
 Your Score
 </p>
 
-<h1 style="font-size:52px;color:#6A1B9A;">
+<h1 style="font-size:55px;color:#6A1B9A;">
 ${score} / ${questions.length}
 </h1>
 
-<h2 style="margin:10px 0;">
+<h2 style="margin:12px 0;">
 ${percentage}%
 </h2>
 
-<p style="font-size:20px;font-weight:bold;margin-bottom:25px;">
+<p style="font-size:20px;font-weight:bold;margin-bottom:22px;">
 ${message}
 </p>
 
 <button onclick="location.reload()">
-Restart Quiz
+🔁 Restart Quiz
 </button>
 
 <button
 onclick="location.href='index.html'"
 style="background:#555;">
-Back to Home
+🏠 Back to Home
 </button>
 
 </div>
@@ -341,36 +440,41 @@ Back to Home
 
 }
 
-};
-
-// ===============================
-// Start Quiz
-// ===============================
+// =======================================
+// START AGAIN
+// =======================================
 
 function startAgain(){
 
-document.getElementById("attemptPopup").style.display="none";
+document.getElementById(
+"attemptPopup"
+).style.display="none";
 
 current=0;
+
 score=0;
+
 selected=-1;
+
+answered=false;
 
 loadQuestion();
 
 }
 
-// ===============================
-// Page Load
-// ===============================
+// =======================================
+// PAGE LOAD
+// =======================================
 
 window.onload=function(){
 
 if(shouldShowPopup()){
 
-document.getElementById("attemptPopup").style.display="flex";
+document.getElementById(
+"attemptPopup"
+).style.display="flex";
 
 }
-
 else{
 
 loadQuestion();
@@ -378,3 +482,4 @@ loadQuestion();
 }
 
 };
+
