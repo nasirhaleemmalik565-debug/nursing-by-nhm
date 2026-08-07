@@ -86,11 +86,14 @@ parseFloat(document.getElementById("weight").value);
 let height =
 parseFloat(document.getElementById("height").value);
 
-if(!weight || !height){
+if (!weight || !height) {
 
 document.getElementById("bmiResult").innerHTML =
+"Please enter valid weight and height.";
 
-"<div style='font-size:32px;font-weight:bold;color:"+color+";'>"
+return;
+
+}
 
 + bmi.toFixed(1) +
 
@@ -115,6 +118,7 @@ return;
 }
 
 height = height/100;
+let bmi = weight / (height * height);
 
 let category = "";
 let color = "";
@@ -163,6 +167,7 @@ emoji + " " + category +
 "</span>" +
 
 "<br><br><small>Healthy BMI Range : 18.5 – 24.9 kg/m²</small>";
+}
 
 </script>
 
