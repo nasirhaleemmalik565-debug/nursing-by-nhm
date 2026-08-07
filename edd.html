@@ -69,23 +69,116 @@ new Date(document.getElementById("lmp").value);
 
 if(isNaN(lmp)){
 
-document.getElementById("eddResult").innerHTML =
-"Please select LMP.";
+let today = new Date();
 
-return;
+let diff =
+today - lmp;
+
+let totalDays =
+Math.floor(diff / (1000*60*60*24));
+
+let weeks =
+Math.floor(totalDays / 7);
+
+let days =
+totalDays % 7;
+
+let trimester = "";
+
+if(weeks < 13){
+
+trimester = "First Trimester";
+
+}
+else if(weeks < 28){
+
+trimester = "Second Trimester";
+
+}
+else{
+
+trimester = "Third Trimester";
 
 }
 
-let edd =
-new Date(lmp);
+let remainingDays =
+280 - totalDays;
 
-edd.setDate(edd.getDate()+280);
+let remainingWeeks =
+Math.floor(remainingDays / 7);
 
-document.getElementById("eddResult").innerHTML=
+let remainingExtraDays =
+remainingDays % 7;
 
-"<b>Expected Date of Delivery</b><br><br>"+
+let options = {
 
-edd.toDateString();
+weekday:"long",
+
+day:"numeric",
+
+month:"long",
+
+year:"numeric"
+
+};
+
+document.getElementById("eddResult").innerHTML =
+
+"<div style='font-size:15px;color:#666;'>🤰 Expected Date of Delivery</div>"
+
++
+
+"<div style='font-size:26px;font-weight:bold;color:#6A1B9A;margin:10px 0;'>"
+
++edd.toLocaleDateString("en-IN",options)+
+
+"</div>"
+
++
+
+"<div style='background:#F7F7F7;padding:12px;border-radius:12px;text-align:left;line-height:1.8;'>"
+
++
+
+"<b>🩺 Gestational Age</b><br>"
+
++weeks+" Weeks "+days+" Days"
+
++
+
+"<br><br>"
+
++
+
+"<b>🌸 Current Trimester</b><br>"
+
++trimester+
+
+"<br><br>"
+
++
+
+"<b>⏳ Time Remaining</b><br>"
+
++remainingWeeks+" Weeks "+remainingExtraDays+" Days"
+
++
+
+"</div>"
+
++
+
+"<br>"
+
++
+
+"<div style='font-size:14px;color:#666;'>"
+
++"📅 Based on Naegele's Rule (LMP + 280 Days)"
+
++"</div>";
+
+
 
 }
 
