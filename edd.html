@@ -39,11 +39,8 @@ EXPECTED DATE OF DELIVERY
 <br><br>
 
 <button onclick="calculateEDD()" class="btn">
-
 Calculate
-
 </button>
-
 </div>
 
 <div class="pearl-card">
@@ -67,7 +64,14 @@ function calculateEDD(){
 let lmp =
 new Date(document.getElementById("lmp").value);
 
-if(isNaN(lmp)){
+if(isNaN(lmp.getTime())){
+document.getElementById("eddResult").innerHTML =
+"Please select LMP.";
+return;
+}
+
+let edd = new Date(lmp);
+edd.setDate(edd.getDate() + 280);
 
 let today = new Date();
 
@@ -101,8 +105,7 @@ trimester = "Third Trimester";
 
 }
 
-let remainingDays =
-280 - totalDays;
+let remainingDays = Math.max(0, 280 - totalDays);
 
 let remainingWeeks =
 Math.floor(remainingDays / 7);
@@ -177,8 +180,6 @@ document.getElementById("eddResult").innerHTML =
 +"📅 Based on Naegele's Rule (LMP + 280 Days)"
 
 +"</div>";
-
-
 
 }
 
