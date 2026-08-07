@@ -82,6 +82,10 @@ placeholder="Enter value">
 
 <option value="mm-fr">mm → French (Fr)</option>
 
+<option value="cmh2o-mmhg">cmH₂O → mmHg</option>
+
+<option value="mmhg-cmh2o">mmHg → cmH₂O</option>
+
 </select>
 
 <br><br>
@@ -206,10 +210,23 @@ case "mm-fr":
 result=(value*3).toFixed(0)+" Fr";
 break;
 
+
+case "cmh2o-mmhg":
+
+result = (value * 0.73556).toFixed(2) + " mmHg";
+
+break;
+
+case "mmhg-cmh2o":
+
+result = (value / 0.73556).toFixed(2) + " cmH₂O";
+
+break;
 default:
 result="Invalid Conversion";
 
 }
+
 
 document.getElementById("convertResult").innerHTML =
 
