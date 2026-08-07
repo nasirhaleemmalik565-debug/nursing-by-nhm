@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Unit Converter</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="appbar">
+
+<a href="tools.html" class="back-btn">←</a>
+
+<div class="appbar-title">
+Unit Converter
+</div>
+
+</div>
+
+<div class="container">
+
+<div class="section-title">
+
+UNIT CONVERTER
+
+</div>
+
+<div class="pearl-card">
+
+<label><b>Enter Value</b></label>
+
+<input type="number"
+id="value"
+placeholder="Enter value">
+
+<br><br>
+
+<label><b>Select Conversion</b></label>
+
+<select id="conversion">
+
+<option value="mg-g">mg → g</option>
+
+<option value="g-mg">g → mg</option>
+
+<option value="mcg-mg">mcg → mg</option>
+
+<option value="mg-mcg">mg → mcg</option>
+
+<option value="ml-l">mL → L</option>
+
+<option value="l-ml">L → mL</option>
+
+<option value="kg-g">kg → g</option>
+
+<option value="g-kg">g → kg</option>
+
+<option value="cm-m">cm → m</option>
+
+<option value="m-cm">m → cm</option>
+
+<option value="inch-cm">inch → cm</option>
+
+<option value="cm-inch">cm → inch</option>
+
+<option value="lb-kg">lb → kg</option>
+
+<option value="kg-lb">kg → lb</option>
+
+<option value="c-f">°C → °F</option>
+
+<option value="f-c">°F → °C</option>
+
+<option value="fr-mm">French (Fr) → mm</option>
+
+<option value="mm-fr">mm → French (Fr)</option>
+
+</select>
+
+<br><br>
+
+<button class="btn"
+onclick="convertUnit()">
+
+Convert
+
+</button>
+
+</div>
+
+<div class="pearl-card">
+
+<h3>🔄 Result</h3>
+
+<div id="convertResult">
+
+Enter a value above.
+
+</div>
+
+</div>
+
+<div class="footer-space"></div>
+
+</div>
+
+<script>
+
+function convertUnit(){
+
+let value =
+parseFloat(document.getElementById("value").value);
+
+let type =
+document.getElementById("conversion").value;
+
+if(isNaN(value)){
+
+document.getElementById("convertResult").innerHTML =
+"Please enter a valid value.";
+
+return;
+
+}
+
+let result="";
+
+switch(type){
+
+case "mg-g":
+result=(value/1000).toFixed(3)+" g";
+break;
+
+case "g-mg":
+result=(value*1000).toFixed(2)+" mg";
+break;
+
+case "mcg-mg":
+result=(value/1000).toFixed(3)+" mg";
+break;
+
+case "mg-mcg":
+result=(value*1000).toFixed(0)+" mcg";
+break;
+
+case "ml-l":
+result=(value/1000).toFixed(3)+" L";
+break;
+
+case "l-ml":
+result=(value*1000).toFixed(0)+" mL";
+break;
+
+case "kg-g":
+result=(value*1000).toFixed(0)+" g";
+break;
+
+case "g-kg":
+result=(value/1000).toFixed(3)+" kg";
+break;
+
+case "cm-m":
+result=(value/100).toFixed(2)+" m";
+break;
+
+case "m-cm":
+result=(value*100).toFixed(0)+" cm";
+break;
+
+case "inch-cm":
+result=(value*2.54).toFixed(2)+" cm";
+break;
+
+case "cm-inch":
+result=(value/2.54).toFixed(2)+" inch";
+break;
+
+case "lb-kg":
+result=(value*0.453592).toFixed(2)+" kg";
+break;
+
+case "kg-lb":
+result=(value*2.20462).toFixed(2)+" lb";
+break;
+
+case "c-f":
+result=((value*9/5)+32).toFixed(1)+" °F";
+break;
+
+case "f-c":
+result=((value-32)*5/9).toFixed(1)+" °C";
+break;
+
+case "fr-mm":
+result=(value/3).toFixed(2)+" mm";
+break;
+
+case "mm-fr":
+result=(value*3).toFixed(0)+" Fr";
+break;
+
+default:
+result="Invalid Conversion";
+
+}
+
+document.getElementById("convertResult").innerHTML =
+
+"<div style='font-size:32px;font-weight:bold;color:#6A1B9A;'>"
+
++result+
+
+"</div>";
+
+}
+
+</script>
+
+</body>
+
+</html>
