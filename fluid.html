@@ -108,19 +108,69 @@ total=(10*100)+(10*50)+((weight-20)*20);
 let hourly=
 (total/24).toFixed(1);
 
-document.getElementById("fluidResult").innerHTML=
 
-"<div style='font-size:30px;font-weight:bold;color:#6A1B9A;'>"
+document.getElementById("fluidResult").innerHTML =
+
+"<div style='font-size:15px;color:#666;'>"
+
++"💧 Daily Fluid Requirement"
+
++"</div>"
+
++
+
+"<div style='font-size:40px;font-weight:bold;color:#6A1B9A;margin:10px 0;'>"
 
 +total.toFixed(0)+" mL/day"
 
-+"</div><br>"
++"</div>"
 
-+"<b>Hourly Requirement</b><br>"
++
+
+"<div style='background:#F7F7F7;padding:12px;border-radius:12px;text-align:left;line-height:1.8;'>"
+
++
+
+"<b>⏰ Hourly Requirement</b><br>"
 
 +hourly+" mL/hr"
 
-+"<br><br><small>Calculated using the 100-50-20 Rule.</small>";
++
+
+"<br><br>"
+
++
+
+"<b>⚖️ Patient Weight</b><br>"
+
++weight+" kg"
+
++
+
+"<br><br>"
+
++
+
+"<b>📋 Formula Used</b><br>"
+
++"100-50-20 Rule"
+
++
+
+"</div>"
+
++
+
+"<br>"
+
++
+
+"<div style='font-size:14px;color:#666;'>"
+
++"For maintenance fluid requirement only."
+
++"</div>";
+
 
 }
 
