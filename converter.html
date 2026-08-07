@@ -228,13 +228,43 @@ result="Invalid Conversion";
 }
 
 
+let conversionName =
+document.getElementById("conversion")
+.options[
+document.getElementById("conversion").selectedIndex
+].text;
+
 document.getElementById("convertResult").innerHTML =
 
-"<div style='font-size:32px;font-weight:bold;color:#6A1B9A;'>"
+"<div style='font-size:15px;color:#666;'>"
+
++"Selected Conversion"
+
++"</div>"
+
++
+
+"<div style='font-size:18px;font-weight:bold;margin:6px 0;color:#6A1B9A;'>"
+
++conversionName+
+
+"</div>"
+
++
+
+"<div style='font-size:42px;font-weight:bold;color:#6A1B9A;margin:15px 0;'>"
 
 +result+
 
-"</div>";
+"</div>"
+
++
+
+"<div style='background:#F7F7F7;padding:12px;border-radius:12px;font-size:15px;color:#555;'>"
+
++"💡 Conversion completed successfully."
+
++"</div>";
 
 }
 
