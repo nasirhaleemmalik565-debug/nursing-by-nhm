@@ -427,29 +427,29 @@ document.querySelector(".card").innerHTML = `
 
 <div style="text-align:center;padding:22px;">
 
-<div style="font-size:70px;">
+<div style="font-size:50px;">
 🎉
 </div>
 
-<h2 style="color:#6A1B9A;margin:10px 0;">
+<h2 style="color:#6A1B9A;font-size:20px;margin:6px 0;">
 Quiz Completed
 </h2>
 
-<p style="font-size:15px;color:#555;">
+<p style="font-size:15px;color:#666;">
 Your Score
 </p>
 
-<h1 style="font-size:46px;color:#6A1B9A;margin-bottom:10px;">
+<h1 style="font-size:42px;color:#6A1B9A;margin-bottom:10px;">
 ${correct} / ${total}
 </h1>
 
 <div style="
 background:#F7F2FF;
-padding:12px;
+padding:10px;
 border-radius:16px;
 text-align:left;
-line-height:1.55;
-font-size:15px;
+line-height:1.50;
+font-size:14px;
 margin-bottom:20px;
 ">
 
@@ -494,8 +494,8 @@ ${badge} ${performance}
 <p style="
 color:#666;
 font-size:14px;
-margin-bottom:18px;
-line-height:1.6;
+margin-bottom:15px;
+line-height:1.4;
 ">
 
 ${note}
