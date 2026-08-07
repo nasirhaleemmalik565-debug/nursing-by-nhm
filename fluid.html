@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fluid Requirement Calculator</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="appbar">
+
+<a href="tools.html" class="back-btn">←</a>
+
+<div class="appbar-title">
+Fluid Requirement
+</div>
+
+</div>
+
+<div class="container">
+
+<div class="section-title">
+
+FLUID REQUIREMENT CALCULATOR
+
+</div>
+
+<div class="pearl-card">
+
+<label><b>Weight (kg)</b></label>
+
+<input
+type="number"
+id="weight"
+placeholder="Enter Weight">
+
+<br><br>
+
+<button
+class="btn"
+onclick="calculateFluid()">
+
+Calculate
+
+</button>
+
+</div>
+
+<div class="pearl-card">
+
+<h3>💧 Result</h3>
+
+<div id="fluidResult">
+
+Enter patient's weight.
+
+</div>
+
+</div>
+
+<div class="footer-space"></div>
+
+</div>
+
+<script>
+
+function calculateFluid(){
+
+let weight =
+parseFloat(document.getElementById("weight").value);
+
+if(isNaN(weight) || weight<=0){
+
+document.getElementById("fluidResult").innerHTML =
+"Please enter a valid weight.";
+
+return;
+
+}
+
+let total=0;
+
+if(weight<=10){
+
+total=weight*100;
+
+}
+
+else if(weight<=20){
+
+total=(10*100)+((weight-10)*50);
+
+}
+
+else{
+
+total=(10*100)+(10*50)+((weight-20)*20);
+
+}
+
+let hourly=
+(total/24).toFixed(1);
+
+document.getElementById("fluidResult").innerHTML=
+
+"<div style='font-size:30px;font-weight:bold;color:#6A1B9A;'>"
+
++total.toFixed(0)+" mL/day"
+
++"</div><br>"
+
++"<b>Hourly Requirement</b><br>"
+
++hourly+" mL/hr"
+
++"<br><br><small>Calculated using the 100-50-20 Rule.</small>";
+
+}
+
+</script>
+
+</body>
+
+</html>
