@@ -389,6 +389,22 @@ opacity:1;
 
 }
 
+@keyframes blink{
+
+0%{
+opacity:1;
+}
+
+50%{
+opacity:.25;
+}
+
+100%{
+opacity:1;
+}
+
+}
+
 </style>
 
 </head>
@@ -427,19 +443,8 @@ opacity:1;
 
 <div class="option"></div>
 
-<button onclick="checkAnswer()">
-
-Submit Answer
-
-</button>
-
 <p id="result"></p>
 
-<button id="nextBtn" style="display:none;">
-
-Next Question →
-
-</button>
 
 </div>
 
