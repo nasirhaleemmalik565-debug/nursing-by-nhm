@@ -435,25 +435,25 @@ document.querySelector(".card").innerHTML = `
 Quiz Completed
 </h2>
 
-<p style="font-size:18px;color:#555;">
+<p style="font-size:15px;color:#555;">
 Your Score
 </p>
 
-<h1 style="font-size:58px;color:#6A1B9A;margin-bottom:18px;">
+<h1 style="font-size:46px;color:#6A1B9A;margin-bottom:10px;">
 ${correct} / ${total}
 </h1>
 
 <div style="
 background:#F7F2FF;
-padding:18px;
+padding:12px;
 border-radius:16px;
 text-align:left;
-line-height:2;
-font-size:17px;
+line-height:1.55;
+font-size:15px;
 margin-bottom:20px;
 ">
 
-<b style="color:#6A1B9A;">
+<b style="color:#6A1B9A;font-size:18px;">
 📊 Quiz Summary
 </b>
 
@@ -479,23 +479,22 @@ margin-bottom:20px;
 
 </div>
 
-<h2 style="color:#6A1B9A;">
-🏅 Performance
-</h2>
-
-<div style="
-font-size:28px;
+<p style="
+font-size:18px;
 font-weight:bold;
-margin:10px 0;
+color:#6A1B9A;
+margin:14px 0 8px;
 ">
 
+🏅 Performance :
 ${badge} ${performance}
 
-</div>
+</p>
 
 <p style="
 color:#666;
-margin-bottom:25px;
+font-size:14px;
+margin-bottom:18px;
 line-height:1.6;
 ">
 
@@ -503,7 +502,7 @@ ${note}
 
 </p>
 
-<button onclick="location.reload()">
+<button style="margin-top:8px;" onclick="location.reload()">
 🔁 Restart Quiz
 </button>
 
