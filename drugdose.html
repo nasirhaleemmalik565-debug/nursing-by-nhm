@@ -103,15 +103,41 @@ let dose =
 
 document.getElementById("doseResult").innerHTML =
 
-"<div style='font-size:32px;font-weight:bold;color:#6A1B9A;'>"
+"<div style='font-size:15px;color:#666;'>"
 
-+ dose.toFixed(2) +
++"💊 Amount to Administer"
+
++"</div>"
+
++
+
+"<div style='font-size:48px;font-weight:bold;color:#6A1B9A;margin:12px 0;'>"
+
++dose.toFixed(2)+
 
 "</div>"
 
 +
 
-"<br><b>Amount to Administer</b>";
+"<div style='background:#F7F7F7;padding:12px;border-radius:12px;'>"
+
++"<b>📋 Formula Used</b><br>"
+
++"(Ordered Dose ÷ Available Dose) × Quantity"
+
++"</div>"
+
++
+
+"<br>"
+
++
+
+"<div style='font-size:14px;color:#666;'>"
+
++"Always verify the calculated dose before administration."
+
++"</div>";
 
 }
 
