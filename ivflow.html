@@ -113,13 +113,78 @@ volume/hours;
 let gttmin =
 (volume*factor)/(hours*60);
 
-document.getElementById("flowResult").innerHTML=
+document.getElementById("flowResult").innerHTML =
 
-"<b>mL/hr :</b> "
-+mlhr.toFixed(1)+
+"<div style='font-size:15px;color:#666;'>"
 
-"<br><br><b>Drops/min :</b> "
-+gttmin.toFixed(1);
++"💧 Infusion Rate"
+
++"</div>"
+
++
+
+"<div style='font-size:40px;font-weight:bold;color:#6A1B9A;margin:10px 0;'>"
+
++mlhr.toFixed(1)+" mL/hr"
+
++"</div>"
+
++
+
+"<div style='background:#F7F7F7;padding:12px;border-radius:12px;text-align:left;line-height:1.8;'>"
+
++
+
+"<b>💉 Drops per Minute</b><br>"
+
++gttmin.toFixed(1)+" gtt/min"
+
++
+
+"<br><br>"
+
++
+
+"<b>🩸 Total Volume</b><br>"
+
++volume+" mL"
+
++
+
+"<br><br>"
+
++
+
+"<b>⏱️ Infusion Time</b><br>"
+
++hours+" Hours"
+
++
+
+"<br><br>"
+
++
+
+"<b>💧 Drop Factor</b><br>"
+
++factor+" gtt/mL"
+
++
+
+"</div>"
+
++
+
+"<br>"
+
++
+
+"<div style='font-size:14px;color:#666;'>"
+
++"📋 Formula: (Volume × Drop Factor) ÷ Time (minutes)"
+
++"</div>";
+
 
 }
 
