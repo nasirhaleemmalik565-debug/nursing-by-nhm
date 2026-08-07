@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IV Flow Rate Calculator</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="appbar">
+
+<a href="tools.html" class="back-btn">←</a>
+
+<div class="appbar-title">
+IV Flow Rate
+</div>
+
+</div>
+
+<div class="container">
+
+<div class="section-title">
+IV FLOW RATE CALCULATOR
+</div>
+
+<div class="pearl-card">
+
+<label><b>Total Volume (mL)</b></label>
+
+<input type="number" id="volume"
+placeholder="Example: 500">
+
+<br><br>
+
+<label><b>Time (Hours)</b></label>
+
+<input type="number" id="hours"
+placeholder="Example: 8">
+
+<br><br>
+
+<label><b>Drop Factor (gtt/mL)</b></label>
+
+<select id="dropFactor">
+
+<option value="15">15</option>
+
+<option value="20">20</option>
+
+<option value="60">60 (Microdrip)</option>
+
+</select>
+
+<br><br>
+
+<button class="btn"
+onclick="calculateFlow()">
+
+Calculate
+
+</button>
+
+</div>
+
+<div class="pearl-card">
+
+<h3>💧 Result</h3>
+
+<div id="flowResult">
+
+Enter values above.
+
+</div>
+
+</div>
+
+<div class="footer-space"></div>
+
+</div>
+
+<script>
+
+function calculateFlow(){
+
+let volume =
+parseFloat(document.getElementById("volume").value);
+
+let hours =
+parseFloat(document.getElementById("hours").value);
+
+let factor =
+parseFloat(document.getElementById("dropFactor").value);
+
+if(!volume || !hours){
+
+document.getElementById("flowResult").innerHTML=
+"Please enter valid values.";
+
+return;
+
+}
+
+let mlhr =
+volume/hours;
+
+let gttmin =
+(volume*factor)/(hours*60);
+
+document.getElementById("flowResult").innerHTML=
+
+"<b>mL/hr :</b> "
++mlhr.toFixed(1)+
+
+"<br><br><b>Drops/min :</b> "
++gttmin.toFixed(1);
+
+}
+
+</script>
+
+</body>
+
+</html>
