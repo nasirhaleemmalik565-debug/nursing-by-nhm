@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drug Dose Calculator</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="appbar">
+
+<a href="tools.html" class="back-btn">←</a>
+
+<div class="appbar-title">
+Drug Dose Calculator
+</div>
+
+</div>
+
+<div class="container">
+
+<div class="section-title">
+DRUG DOSE CALCULATOR
+</div>
+
+<div class="pearl-card">
+
+<label><b>Ordered Dose</b></label>
+
+<input type="number" id="ordered"
+placeholder="Example: 500">
+
+<br><br>
+
+<label><b>Available Dose</b></label>
+
+<input type="number" id="available"
+placeholder="Example: 250">
+
+<br><br>
+
+<label><b>Quantity</b></label>
+
+<input type="number" id="quantity"
+placeholder="Example: 1 Tablet / 5 mL">
+
+<br><br>
+
+<button class="btn"
+onclick="calculateDose()">
+
+Calculate
+
+</button>
+
+</div>
+
+<div class="pearl-card">
+
+<h3>💊 Result</h3>
+
+<div id="doseResult">
+
+Enter values above.
+
+</div>
+
+</div>
+
+<div class="footer-space"></div>
+
+</div>
+
+<script>
+
+function calculateDose(){
+
+let ordered =
+parseFloat(document.getElementById("ordered").value);
+
+let available =
+parseFloat(document.getElementById("available").value);
+
+let quantity =
+parseFloat(document.getElementById("quantity").value);
+
+if(!ordered || !available || !quantity){
+
+document.getElementById("doseResult").innerHTML =
+"Please enter valid values.";
+
+return;
+
+}
+
+let dose =
+(ordered/available)*quantity;
+
+document.getElementById("doseResult").innerHTML =
+
+"<div style='font-size:32px;font-weight:bold;color:#6A1B9A;'>"
+
++ dose.toFixed(2) +
+
+"</div>"
+
++
+
+"<br><b>Amount to Administer</b>";
+
+}
+
+</script>
+
+</body>
+
+</html>
