@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EDD Calculator</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="appbar">
+
+<a href="tools.html" class="back-btn">←</a>
+
+<div class="appbar-title">
+EDD Calculator
+</div>
+
+</div>
+
+<div class="container">
+
+<div class="section-title">
+EXPECTED DATE OF DELIVERY
+</div>
+
+<div class="pearl-card">
+
+<label><b>Select LMP</b></label>
+
+<input type="date" id="lmp">
+
+<br><br>
+
+<button onclick="calculateEDD()" class="btn">
+
+Calculate
+
+</button>
+
+</div>
+
+<div class="pearl-card">
+
+<h3>📅 Result</h3>
+
+<div id="eddResult">
+
+Select Last Menstrual Period.
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function calculateEDD(){
+
+let lmp =
+new Date(document.getElementById("lmp").value);
+
+if(isNaN(lmp)){
+
+document.getElementById("eddResult").innerHTML =
+"Please select LMP.";
+
+return;
+
+}
+
+let edd =
+new Date(lmp);
+
+edd.setDate(edd.getDate()+280);
+
+document.getElementById("eddResult").innerHTML=
+
+"<b>Expected Date of Delivery</b><br><br>"+
+
+edd.toDateString();
+
+}
+
+</script>
+
+</body>
+
+</html>
+
