@@ -1,5 +1,5 @@
 // =======================================
-// DAILY MCQs v3.0
+// DAILY MCQs v3.1 FINAL
 // Nursing by NHM
 // =======================================
 
@@ -18,7 +18,7 @@ localStorage.getItem("lastCompletedDate");
 const totalQuizDays =
 Math.ceil(questionBank.length / QUESTIONS_PER_DAY);
 
-// ---------- NEXT QUIZ DAY ----------
+// ---------- QUIZ DAY ----------
 
 if(
 lastCompletedDate &&
@@ -47,27 +47,26 @@ localStorage.removeItem(
 // ---------- TODAY'S QUESTIONS ----------
 
 let startIndex =
-(quizDay-1) * QUESTIONS_PER_DAY;
-
-let endIndex =
-startIndex + QUESTIONS_PER_DAY;
+(quizDay - 1) *
+QUESTIONS_PER_DAY;
 
 let questions =
 questionBank.slice(
 startIndex,
-endIndex
+startIndex +
+QUESTIONS_PER_DAY
 );
 
 if(questions.length===0){
 
-quizDay = 1;
+quizDay=1;
 
 localStorage.setItem(
 "quizDay",
 1
 );
 
-questions =
+questions=
 questionBank.slice(
 0,
 QUESTIONS_PER_DAY
@@ -91,13 +90,17 @@ let current = 0;
 
 let score = 0;
 
+let attempted = 0;
+
+let unattempted = 0;
+
 let selected = -1;
 
-let timer;
+let answered = false;
 
 let timerValue = 30;
 
-let answered = false;
+let timer;
 
 // ---------- ELEMENTS ----------
 
@@ -128,7 +131,7 @@ function nextQuestion(){
 
 current++;
 
-if(current < questions.length){
+if(current<questions.length){
 
 loadQuestion();
 
@@ -158,10 +161,8 @@ timerValue = 30;
 result.innerHTML = "";
 
 progressText.innerHTML =
-"Question " +
-(current + 1) +
-" / " +
-questions.length;
+"Question " + (current + 1) +
+" / " + questions.length;
 
 progressFill.style.width =
 ((current + 1) / questions.length * 100) + "%";
@@ -172,7 +173,7 @@ quizDayBox.innerHTML =
 question.innerHTML =
 questions[current].question;
 
-// Reset Timer Style
+// Reset Timer
 
 timerBox.style.animation = "none";
 
@@ -194,9 +195,6 @@ String.fromCharCode(65 + index) +
 ". " +
 questions[current].options[index].text;
 
-option.dataset.correct =
-questions[current].options[index].correct;
-
 option.onclick = function(){
 
 if(answered){
@@ -208,6 +206,8 @@ return;
 answered = true;
 
 selected = index;
+
+attempted++;
 
 options.forEach(function(o){
 
@@ -230,9 +230,7 @@ timer = setInterval(function(){
 timerValue--;
 
 timerBox.innerHTML =
-"⏱️ " +
-timerValue +
-" sec";
+"⏱️ " + timerValue + " sec";
 
 // Last 5 Seconds
 
@@ -260,6 +258,8 @@ if(timerValue <= 0){
 clearInterval(timer);
 
 answered = true;
+
+unattempted++;
 
 timerBox.innerHTML =
 "⏰ Time's Up!";
@@ -347,13 +347,21 @@ result.style.color =
 
 }
 
-// Auto Next
+// Disable all options
+
+options.forEach(function(o){
+
+o.style.pointerEvents="none";
+
+});
+
+// Auto Next after 1.2 sec
 
 setTimeout(function(){
 
 nextQuestion();
 
-},1800);
+},1200);
 
 }
 
@@ -368,60 +376,131 @@ localStorage.setItem(
 today
 );
 
-let percentage =
-Math.round(
-(score/questions.length)*100
-);
+const total = questions.length;
 
-let message="";
+const correct = score;
 
-if(percentage>=80){
+const incorrect = attempted - correct;
 
-message="🌟 Excellent!";
+const scorePercentage =
+Math.round((correct / total) * 100);
+
+const accuracy =
+attempted == 0
+? 0
+: Math.round((correct / attempted) * 100);
+
+let badge = "";
+let performance = "";
+let note = "";
+
+if(scorePercentage >= 80){
+
+badge = "🌟";
+performance = "Excellent";
+note = "Outstanding performance! Keep it up.";
 
 }
-else if(percentage>=60){
+else if(scorePercentage >= 60){
 
-message="👏 Good Job!";
+badge = "👏";
+performance = "Good";
+note = "Good job! Keep practicing.";
 
 }
-else if(percentage>=40){
+else if(scorePercentage >= 40){
 
-message="📚 Keep Practicing!";
+badge = "📖";
+performance = "Average";
+note = "You're improving. Keep learning.";
 
 }
 else{
 
-message="💪 Revise & Try Again!";
+badge = "📚";
+performance = "Needs Improvement";
+note = "Practice more and come back stronger.";
 
 }
 
-document.querySelector(".card").innerHTML=`
+document.querySelector(".card").innerHTML = `
 
-<div style="text-align:center;padding:20px;">
+<div style="text-align:center;padding:22px;">
 
 <div style="font-size:70px;">
 🎉
 </div>
 
-<h2 style="color:#6A1B9A;margin:12px 0;">
+<h2 style="color:#6A1B9A;margin:10px 0;">
 Quiz Completed
 </h2>
 
-<p style="font-size:19px;">
+<p style="font-size:18px;color:#555;">
 Your Score
 </p>
 
-<h1 style="font-size:55px;color:#6A1B9A;">
-${score} / ${questions.length}
+<h1 style="font-size:58px;color:#6A1B9A;margin-bottom:18px;">
+${correct} / ${total}
 </h1>
 
-<h2 style="margin:12px 0;">
-${percentage}%
+<div style="
+background:#F7F2FF;
+padding:18px;
+border-radius:16px;
+text-align:left;
+line-height:2;
+font-size:17px;
+margin-bottom:20px;
+">
+
+<b style="color:#6A1B9A;">
+📊 Quiz Summary
+</b>
+
+<br><br>
+
+✅ Correct
+<span style="float:right;"><b>${correct}</b></span><br>
+
+❌ Incorrect
+<span style="float:right;"><b>${incorrect}</b></span><br>
+
+⏳ Unattempted
+<span style="float:right;"><b>${unattempted}</b></span><br>
+
+🎯 Attempted
+<span style="float:right;"><b>${attempted}/${total}</b></span><br>
+
+📈 Accuracy
+<span style="float:right;"><b>${accuracy}%</b></span><br>
+
+📊 Score
+<span style="float:right;"><b>${scorePercentage}%</b></span>
+
+</div>
+
+<h2 style="color:#6A1B9A;">
+🏅 Performance
 </h2>
 
-<p style="font-size:20px;font-weight:bold;margin-bottom:22px;">
-${message}
+<div style="
+font-size:28px;
+font-weight:bold;
+margin:10px 0;
+">
+
+${badge} ${performance}
+
+</div>
+
+<p style="
+color:#666;
+margin-bottom:25px;
+line-height:1.6;
+">
+
+${note}
+
 </p>
 
 <button onclick="location.reload()">
@@ -448,15 +527,19 @@ function startAgain(){
 
 document.getElementById(
 "attemptPopup"
-).style.display="none";
+).style.display = "none";
 
-current=0;
+current = 0;
 
-score=0;
+score = 0;
 
-selected=-1;
+attempted = 0;
 
-answered=false;
+unattempted = 0;
+
+selected = -1;
+
+answered = false;
 
 loadQuestion();
 
@@ -466,13 +549,13 @@ loadQuestion();
 // PAGE LOAD
 // =======================================
 
-window.onload=function(){
+window.onload = function(){
 
 if(shouldShowPopup()){
 
 document.getElementById(
 "attemptPopup"
-).style.display="flex";
+).style.display = "flex";
 
 }
 else{
