@@ -632,9 +632,10 @@ background:#E8F5E9;
 
 }
 
-.fav-btn.active .material-symbols-outlined{
+.fav-btn.active .material-symbols-outlined,
+.fav-btn.active span{
 
-color:#2E7D32;
+color:#2E7D32 !important;
 
 }
 
